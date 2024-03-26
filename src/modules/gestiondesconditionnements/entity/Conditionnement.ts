@@ -1,0 +1,24 @@
+import { IsAlpha, IsNotEmpty } from "class-validator";
+import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
+import { ProduitConditionnement } from "./ProduitConditionnement";
+
+@Entity()
+export class Conditionnement{
+    @PrimaryGeneratedColumn()
+    id:number
+    
+    @Column()
+    libelle:string
+
+    @OneToMany(() => ProduitConditionnement, (produitconditionnement) => produitconditionnement.conditionnement)
+    produitconditionnements: ProduitConditionnement[]
+
+    @CreateDateColumn()
+    createdAt:Timestamp
+    
+    @UpdateDateColumn()
+    updatedAt:Timestamp;
+
+    @DeleteDateColumn()
+    deletedAt:Timestamp;
+}
