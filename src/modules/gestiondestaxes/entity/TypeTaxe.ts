@@ -10,8 +10,8 @@ export class TypeTaxe{
     @Column()
     libelleType:string
 
-    @OneToMany(() => Taxe, (typtaxe) => typtaxe.taxe)
-    typtaxes: Taxe[]
+    @OneToMany(() => Taxe, (taxe) => taxe.typeTaxe)
+    taxes: Taxe[]
 
     @CreateDateColumn()
     createdAt:Timestamp

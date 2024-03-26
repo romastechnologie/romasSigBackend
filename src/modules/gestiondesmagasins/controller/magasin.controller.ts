@@ -3,7 +3,9 @@ import { generateServerErrorCode, success, validateMessage } from "../../../conf
 import { Request, Response } from "express";
 import { ValidationError, validate } from "class-validator";
 import { Brackets } from "typeorm";
-import { checkRelationsOneToMany } from "../../../../configs/checkRelationsOneToManyBeforDelete";
+
+import { Magasin } from "../entity/Magasin";
+import { checkRelationsOneToMany } from "../../../configs/checkRelationsOneToManyBeforDelete";
 
 
 
@@ -35,7 +37,11 @@ export const createMagasin = async (req: Request, res: Response) => {
 export const getAllMagasin = async (req: Request, res: Response) => {
     await myDataSource.getRepository(Magasin).find({
         relations:{
-            
+            personnel:true,
+            magasintransferts1:true,
+            magasintransferts2:true,
+            magasinprocondis:true, 
+            magasinaprocondis:true
         }
     })
     .then((retour) => {
@@ -54,7 +60,11 @@ export const getMagasin = async (req: Request, res: Response) => {
             id: parseInt(req.params.id),
         },
         relations: {
-            
+            personnel:true,
+            magasintransferts1:true,
+            magasintransferts2:true,
+            magasinprocondis:true, 
+            magasinaprocondis:true
     },
     })
     .then(magasin => {
@@ -80,7 +90,11 @@ export const updateMagasin = async (req: Request, res: Response) => {
         },
         relations: {
            
-            
+            personnel:true,
+            magasintransferts1:true,
+            magasintransferts2:true,
+            magasinprocondis:true, 
+            magasinaprocondis:true
         },
     }
     )
@@ -117,8 +131,11 @@ export const deleteMagasin = async (req: Request, res: Response) => {
             id: parseInt(req.params.id)
         },
         relations:{
-           
-           
+            personnel:true,
+            magasintransferts1:true,
+            magasintransferts2:true,
+            magasinprocondis:true, 
+            magasinaprocondis:true
         }
         })
     .then(magasin => {        

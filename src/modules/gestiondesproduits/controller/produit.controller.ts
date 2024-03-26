@@ -3,8 +3,8 @@ import { generateServerErrorCode, success, validateMessage } from "../../../conf
 import { Request, Response } from "express";
 import { ValidationError, validate } from "class-validator";
 import { Brackets } from "typeorm";
-import { checkRelationsOneToMany } from "../../../../configs/checkRelationsOneToManyBeforDelete";
-import { Produit } from "../Produit";
+import { Produit } from "../entity/Produit";
+import { checkRelationsOneToMany } from "../../../configs/checkRelationsOneToManyBeforDelete";
 
 
 
@@ -96,7 +96,7 @@ export const updateProduit = async (req: Request, res: Response) => {
         const message = validateMessage(errors);
         return generateServerErrorCode(res,400,errors,message)
     }
-    await myDataSource.getRepository(produit).save(produit).then(produit => {
+    await myDataSource.getRepository(Produit).save(produit).then(produit => {
         const message = `Le produit ${produit.id} a bien été modifié.`
         return success(res,200,produit,message);
     }).catch(error => {
