@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { createMedia, deleteMedia, getAllMedia, getMedia, updateMedia } from '../entity/controller/media.controller';
+import { createMedia, deleteMedia, getAllMedia, getMedia, updateMedia } from '../controller/media.controller';
 
 export  const mediasRoutes =  (router: express.Router) => {
   router.post('/api/medias', createMedia);

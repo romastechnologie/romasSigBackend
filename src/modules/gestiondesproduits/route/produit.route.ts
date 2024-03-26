@@ -1,5 +1,5 @@
 import * as express from 'express';
-import { createProduit, deleteProduit, getAllProduit, getProduit, updateProduit } from '../entity/controller/produit.controller';
+import { createProduit, deleteProduit, getAllProduit, getProduit, updateProduit } from '../controller/produit.controller';
 
 export  const produitsRoutes =  (router: express.Router) => {
   router.post('/api/produits', createProduit);

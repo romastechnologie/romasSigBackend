@@ -121,7 +121,7 @@ export const deleteConditionnement = async (req: Request, res: Response) => {
         })
     .then(conditionnement => {        
         if(conditionnement === null) {
-          const message = `Le conditionnement demandée n'existe pas. Réessayez avec un autre identifiant.`
+          const message = `Le conditionnement demandé n'existe pas. Réessayez avec un autre identifiant.`
           return generateServerErrorCode(res,400,"L'id n'existe pas",message);
         }
 

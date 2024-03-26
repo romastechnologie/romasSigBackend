@@ -13,9 +13,9 @@ export class Taxe{
     @Column()
     libelleTaxe:string
 
-    @ManyToOne(()=>TypeTaxe, (taxe)=>taxe.typtaxes)
+    @ManyToOne(()=>TypeTaxe, (typeTaxe)=>typeTaxe.taxes)
     @JoinColumn()
-    taxe:TypeTaxe[]
+    typeTaxe:TypeTaxe[]
 
     @CreateDateColumn()
     createdAt:Timestamp

@@ -29,6 +29,16 @@ import { taxesRoutes } from "./modules/gestiondestaxes/route/taxe.route";
 import { typetaxesRoutes } from "./modules/gestiondestaxes/route/typetaxe.route";
 import { fonctionsRoutes } from "./modules/gestiondupersonnel/route/fonction.route";
 import { personnelsRoutes } from "./modules/gestiondupersonnel/route/personnel.route";
+import { inventairesRoutes } from "./modules/gestiondesmagasins/route/inventaire.route";
+import { transfertsRoutes } from "./modules/gestiondesmagasins/route/transfert.route";
+import { banquesRoutes } from "./modules/gestiondesportefeuille/route/banque.route";
+import { comptesRoutes } from "./modules/gestiondesportefeuille/route/compte.route";
+import { societesRoutes } from "./modules/gestiondesportefeuille/route/societe.route";
+import { transactionsRoutes } from "./modules/gestiondesportefeuille/route/transaction.route";
+import { pointventesRoutes } from "./modules/gestiondespointventes/route/pointvente.route";
+import { facturesRoutes } from "./modules/gestiondesfactures/route/facture.route";
+import { modepaiementsRoutes } from "./modules/gestiondesfactures/route/modepaiement.route";
+import { paiementsRoutes } from "./modules/gestiondesfactures/route/paiement.route";
 
 
 require("dotenv").config();
@@ -109,6 +119,26 @@ typetaxesRoutes(app);
 fonctionsRoutes(app);
 
 personnelsRoutes(app);
+
+inventairesRoutes(app);
+
+transfertsRoutes(app);
+
+banquesRoutes(app);
+
+comptesRoutes(app);
+
+societesRoutes(app);
+
+transactionsRoutes(app);
+
+facturesRoutes(app);
+
+modepaiementsRoutes(app);
+
+paiementsRoutes(app);
+
+pointventesRoutes(app);
 
 
 
