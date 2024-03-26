@@ -15,7 +15,7 @@ export class Compte{
     @Column()
     solde:number
 
-    @ManyToOne(()=>Client, (client)=>client.commandeclients)
+    @ManyToOne(()=>Client, (client)=>client.compteclients)
     @JoinColumn()
     client:Client[]
 
