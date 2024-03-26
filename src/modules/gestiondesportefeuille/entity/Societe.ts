@@ -1,32 +1,38 @@
 import { IsAlpha, IsNotEmpty } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
-import { Personnel } from "./Personnel";
-import { Fonction } from "./Fonction";
+import { Banque } from "./Banque";
 
 @Entity()
-export class PersonnelFonction{
+export class Societe{
     @PrimaryGeneratedColumn()
     id:number
+    
+    @Column()
+    nom:string
 
     @Column()
-    nombreFonction:number
+    sigle:string
 
     @Column()
-    dateDebutFonc:Date
+    adresse:string
 
     @Column()
-    dateFinFonc:Date
+    logo:string
 
     @Column()
-    etat:string
+    raisonSocial:string
 
-    @ManyToOne(()=>Personnel, (personnel)=>personnel.personnelfonctions)
-    @JoinColumn()
-    personnel:Personnel[]
+    @Column()
+    ifu:number
+    
+    @Column()
+    rccm:string
 
-    @ManyToOne(()=>Fonction, (fonction)=>fonction.personnelfonctions)
-    @JoinColumn()
-    fonction:Fonction[]
+    @Column()
+    statut:string
+
+    @OneToMany(() => Banque, (banquesociete) => banquesociete.societe)
+    banquesocietes: Banque[]
 
     @CreateDateColumn()
     createdAt:Timestamp

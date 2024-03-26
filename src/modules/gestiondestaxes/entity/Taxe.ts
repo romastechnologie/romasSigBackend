@@ -13,7 +13,7 @@ export class Taxe{
     @Column()
     libelleTaxe:string
 
-    @ManyToOne(()=>TypeTaxe, (taxe)=>taxe.typetaxes)
+    @ManyToOne(()=>TypeTaxe, (taxe)=>taxe.typtaxes)
     @JoinColumn()
     taxe:TypeTaxe[]
 

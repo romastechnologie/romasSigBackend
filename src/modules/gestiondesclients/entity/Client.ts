@@ -2,6 +2,8 @@ import { IsAlpha, IsNotEmpty } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
 import { CommandeClient } from "./CommandeClient";
 import { AdresseLivraison } from "../../gestiondessorties/entity/AdresseLivraison";
+import { Compte } from "../../gestiondesportefeuille/entity/Compte";
+import { Transaction } from "../../gestiondesportefeuille/entity/Transaction";
 
 @Entity()
 export class Client{
@@ -37,6 +39,12 @@ export class Client{
 
     @OneToMany(() => CommandeClient, (commandeclient) => commandeclient.client)
     commandeclients: CommandeClient[]
+
+    @OneToMany(() => Compte, (compteclient) => compteclient.client)
+    compteclients: Compte[]
+
+    @OneToMany(() => Transaction, (clientransac) => clientransac.client)
+    clientransacs: Transaction[]
 
     @Column()
     ifu:number
