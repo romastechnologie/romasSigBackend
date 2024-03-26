@@ -14,6 +14,21 @@ import { userRoutes } from "./modules/gestiondesutilisateurs/route/user.route";
 import { permissionsRoutes } from "./modules/gestiondesutilisateurs/route/permission.route";
 import { affectationsRoutes } from "./modules/gestiondesutilisateurs/route/affectation.route";
 import { journalRoutes } from "./modules/gestiondesutilisateurs/route/journal.route";
+import { magasinsRoutes } from "./modules/gestiondesmagasins/route/magasin.route";
+import { fournisseursRoutes } from "./modules/gestiondesfournisseurs/route/fournisseur.route";
+import { caissesRoutes } from "./modules/gestiondelacaisse/route/caisse.route";
+import { monnaiesRoutes } from "./modules/gestiondelacaisse/route/monnaie.route";
+import { approvisionnementsRoutes } from "./modules/gestiondesapprovisionnements/route/aprovisionnement.route";
+import { clientsRoutes } from "./modules/gestiondesclients/route/client.route";
+import { conditionnementsRoutes } from "./modules/gestiondesconditionnements/route/conditionnement.route";
+import { famillesRoutes } from "./modules/gestiondesproduits/route/famille.route";
+import { mediasRoutes } from "./modules/gestiondesproduits/route/media.route";
+import { produitsRoutes } from "./modules/gestiondesproduits/route/produit.route";
+import { adresselivraisonsRoutes } from "./modules/gestiondessorties/route/adresselivraison.route";
+import { taxesRoutes } from "./modules/gestiondestaxes/route/taxe.route";
+import { typetaxesRoutes } from "./modules/gestiondestaxes/route/typetaxe.route";
+import { fonctionsRoutes } from "./modules/gestiondupersonnel/route/fonction.route";
+import { personnelsRoutes } from "./modules/gestiondupersonnel/route/personnel.route";
 
 
 require("dotenv").config();
@@ -64,6 +79,38 @@ permissionsRoutes(app);
 affectationsRoutes(app);
 
 journalRoutes(app);
+
+magasinsRoutes(app);
+
+fournisseursRoutes(app);
+
+caissesRoutes(app);
+
+monnaiesRoutes(app);
+
+approvisionnementsRoutes(app);
+
+clientsRoutes(app);
+
+conditionnementsRoutes(app);
+
+famillesRoutes(app);
+
+mediasRoutes(app);
+
+produitsRoutes(app);
+
+adresselivraisonsRoutes(app);
+
+taxesRoutes(app);
+
+typetaxesRoutes(app);
+
+fonctionsRoutes(app);
+
+personnelsRoutes(app);
+
+
 
 
 //Autorisation des entêtes
