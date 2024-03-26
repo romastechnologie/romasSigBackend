@@ -3,8 +3,9 @@ import { generateServerErrorCode, success, validateMessage } from "../../../conf
 import { Request, Response } from "express";
 import { ValidationError, validate } from "class-validator";
 import { Brackets } from "typeorm";
-import { checkRelationsOneToMany } from "../../../../configs/checkRelationsOneToManyBeforDelete";
+
 import { PointVente } from "../entity/PointVente";
+import { checkRelationsOneToMany } from "../../../configs/checkRelationsOneToManyBeforDelete";
 
 
 

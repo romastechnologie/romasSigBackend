@@ -15,7 +15,6 @@ import { permissionsRoutes } from "./modules/gestiondesutilisateurs/route/permis
 import { affectationsRoutes } from "./modules/gestiondesutilisateurs/route/affectation.route";
 import { journalRoutes } from "./modules/gestiondesutilisateurs/route/journal.route";
 import { magasinsRoutes } from "./modules/gestiondesmagasins/route/magasin.route";
-import { fournisseursRoutes } from "./modules/gestiondesfournisseurs/route/fournisseur.route";
 import { caissesRoutes } from "./modules/gestiondelacaisse/route/caisse.route";
 import { monnaiesRoutes } from "./modules/gestiondelacaisse/route/monnaie.route";
 import { approvisionnementsRoutes } from "./modules/gestiondesapprovisionnements/route/aprovisionnement.route";
@@ -39,6 +38,7 @@ import { pointventesRoutes } from "./modules/gestiondespointventes/route/pointve
 import { facturesRoutes } from "./modules/gestiondesfactures/route/facture.route";
 import { modepaiementsRoutes } from "./modules/gestiondesfactures/route/modepaiement.route";
 import { paiementsRoutes } from "./modules/gestiondesfactures/route/paiement.route";
+import { fournisseursRoutes } from "./modules/gestiondesfournisseurs/route.ts/fournisseur.route";
 
 
 require("dotenv").config();

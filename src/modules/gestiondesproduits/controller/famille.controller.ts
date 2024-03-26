@@ -4,7 +4,7 @@ import { Request, Response } from "express";
 import { ValidationError, validate } from "class-validator";
 import { Brackets } from "typeorm";
 import { checkRelationsOneToMany } from "../../../configs/checkRelationsOneToManyBeforDelete";
-import { Famille } from "../Famille";
+import { Famille } from "../entity/Famille";
 
 
 
