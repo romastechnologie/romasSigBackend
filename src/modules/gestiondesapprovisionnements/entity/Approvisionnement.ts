@@ -16,7 +16,7 @@ export class Approvisionnement{
     @Column()
     date:Date
 
-    @ManyToOne(()=>CommandeFournisseur, (commandefourniseur)=>commandefourniseur.commandefourniseurprocondis)
+    @ManyToOne(()=>CommandeFournisseur, (commandefourniseur)=>commandefourniseur.aprovisioncommandefournis)
     @JoinColumn()
     commandefourniseur:CommandeFournisseur[]
 
