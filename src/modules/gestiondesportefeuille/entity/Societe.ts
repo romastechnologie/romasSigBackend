@@ -1,6 +1,7 @@
 import { IsAlpha, IsNotEmpty } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
 import { Banque } from "./Banque";
+import { PointVente } from "../../gestiondespointventes/entity/PointVente";
 
 @Entity()
 export class Societe{
@@ -33,6 +34,9 @@ export class Societe{
 
     @OneToMany(() => Banque, (banquesociete) => banquesociete.societe)
     banquesocietes: Banque[]
+
+    @OneToMany(() => PointVente, (societepointvent) => societepointvent.societe)
+    societepointvents: PointVente[]
 
     @CreateDateColumn()
     createdAt:Timestamp

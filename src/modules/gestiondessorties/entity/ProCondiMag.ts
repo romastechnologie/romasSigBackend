@@ -2,26 +2,28 @@ import { IsAlpha, IsNotEmpty } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
 import { CommandeClient } from "../../gestiondesclients/entity/CommandeClient";
 import { Client } from "../../gestiondesclients/entity/Client";
+import { ProCondiMagasin } from "../../gestiondesmagasins/entity/ProCondiMagasin";
 import { Livraison } from "./Livraison";
 
 @Entity()
-export class AdresseLivraison{
+export class ProCondiMag{
     @PrimaryGeneratedColumn()
     id:number
 
     @Column()
-    libelleAdresse:string
+    qtite:number
 
-    @ManyToOne(()=>Client, (client)=>client.adresselivrclients)
+    @Column()
+    qtiteRestante:number
+
+    @ManyToOne(()=>Livraison, (livraison)=>livraison.procondimaglivraisons)
     @JoinColumn()
-    client:Client[]
+    livraison:Livraison[]
 
-    @OneToMany(() => Livraison, (adresselivraison) => adresselivraison.adreslivraison)
-    adresselivraisons: Livraison[]
-    
-    @OneToMany(() => CommandeClient, (commandeclient) => commandeclient.client)
-    commandeclients: CommandeClient[]
-   
+    @ManyToOne(()=>ProCondiMagasin, (magprocondi)=>magprocondi.magprocondis)
+    @JoinColumn()
+    magprocondi:ProCondiMagasin[]
+
     @CreateDateColumn()
     createdAt:Timestamp
     
