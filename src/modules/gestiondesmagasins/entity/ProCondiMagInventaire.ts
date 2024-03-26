@@ -1,33 +1,24 @@
 import { IsAlpha, IsNotEmpty } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
-import { Personnel } from "./Personnel";
-import { Fonction } from "./Fonction";
+import { Inventaire } from "./Inventaire";
+import { ProCondiMagasin } from "./ProCondiMagasin";
 
 @Entity()
-export class PersonnelFonction{
+export class ProCondiMagInventaire{
     @PrimaryGeneratedColumn()
     id:number
 
     @Column()
-    nombreFonction:number
+    dateDebut:Date
 
-    @Column()
-    dateDebutFonc:Date
-
-    @Column()
-    dateFinFonc:Date
-
-    @Column()
-    etat:string
-
-    @ManyToOne(()=>Personnel, (personnel)=>personnel.personnelfonctions)
+    @ManyToOne(()=>ProCondiMagasin, (procondimag)=>procondimag.procondimaginventaires)
     @JoinColumn()
-    personnel:Personnel[]
+    procondimag:ProCondiMagasin[]
 
-    @ManyToOne(()=>Fonction, (fonction)=>fonction.personnelfonctions)
+    @ManyToOne(()=>Inventaire, (inventaire)=>inventaire.inventaiprocondimags)
     @JoinColumn()
-    fonction:Fonction[]
-
+    inventaire:Inventaire[]
+    
     @CreateDateColumn()
     createdAt:Timestamp
     

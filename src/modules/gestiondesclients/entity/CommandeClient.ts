@@ -3,6 +3,8 @@ import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTab
 import { Client } from "./Client";
 import { AdresseLivraison } from "../../gestiondessorties/entity/AdresseLivraison";
 import { ProCondiCommandeClient } from "./ProCondiCommandeClient";
+import { Facture } from "../../gestiondesfactures/entity/Facture";
+import { Livraison } from "../../gestiondessorties/entity/Livraison";
 
 @Entity()
 export class CommandeClient{
@@ -19,6 +21,12 @@ export class CommandeClient{
 
     @OneToMany(() => ProCondiCommandeClient, (proCondiCommandeClient) => proCondiCommandeClient.commandeclient)
     proCondiCommandeClients: ProCondiCommandeClient[]
+
+    @OneToMany(() => Facture, (commandefacture) => commandefacture.commandeclient)
+    commandefactures: Facture[]
+
+    @OneToMany(() => Livraison, (commandeclientlivr) => commandeclientlivr.commandeclient)
+    commandeclientlivrs: Livraison[]
     
     @Column()
     dateCommande:Date

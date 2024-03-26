@@ -1,6 +1,8 @@
 import { IsAlpha, IsNotEmpty } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
 import { PersonnelFonction } from "./PersonnelFonction";
+import { Magasin } from "../../gestiondesmagasins/entity/Magasin";
+import { PointVente } from "../../gestiondespointventes/entity/PointVente";
 
 @Entity()
 export class Personnel{
@@ -37,8 +39,14 @@ export class Personnel{
     @Column()
     motPasse:string
 
-    @OneToMany(() => PersonnelFonction, (fonctionpersonnel) => fonctionpersonnel.personnel)
-    fonctionpersonnels: PersonnelFonction[]
+    @OneToMany(() => PersonnelFonction, (personnelfonction) => personnelfonction.personnel)
+    personnelfonctions: PersonnelFonction[]
+
+    @OneToMany(() => Magasin, (personnelmagasin) => personnelmagasin.personnel)
+    personnelmagasins: Magasin[]
+
+    @OneToMany(() => PointVente, (personelpointvent) => personelpointvent.personnel)
+    personelpointvents: PointVente[]
 
     @CreateDateColumn()
     createdAt:Timestamp

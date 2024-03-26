@@ -1,17 +1,17 @@
 import { IsAlpha, IsNotEmpty } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
-import { Taxe } from "./Taxe";
+import { Paiement } from "./Paiement";
 
 @Entity()
-export class TypeTaxe{
+export class ModePaiement{
     @PrimaryGeneratedColumn()
     id:number
-
+    
     @Column()
-    libelleType:string
+    libelle:string
 
-    @OneToMany(() => Taxe, (typtaxe) => typtaxe.taxe)
-    typtaxes: Taxe[]
+    @OneToMany(() => Paiement, (modepaiement) => modepaiement.modepaiement)
+    modepaiements: Paiement[]
 
     @CreateDateColumn()
     createdAt:Timestamp

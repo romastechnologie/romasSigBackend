@@ -1,31 +1,26 @@
 import { IsAlpha, IsNotEmpty } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
+import { Magasin } from "./Magasin";
 import { ProduitConditionnement } from "../../gestiondesconditionnements/entity/ProduitConditionnement";
-import { Approvisionnement } from "./Approvisionnement";
-import { ApropoCondiMagasin } from "../../gestiondesmagasins/entity/ApropoCondiMagasin";
+import { ProCondiMagInventaire } from "./ProCondiMagInventaire";
+import { Transfert } from "./Transfert";
 
 @Entity()
-export class AProCondi{
+export class ProCondiTrans{
     @PrimaryGeneratedColumn()
     id:number
 
     @Column()
-    montant:number
+    qtite:number
 
-    @Column()
-    qtité:number
+    @ManyToOne(()=>Transfert, (transfert)=>transfert.transfertprocondis)
+    @JoinColumn()
+    transfert:Transfert[]
 
-    @ManyToOne(()=>ProduitConditionnement, (produitcondi)=>produitcondi.aprocondis)
+    @ManyToOne(()=>ProduitConditionnement, (produitcondi)=>produitcondi.proconditransferts)
     @JoinColumn()
     produitcondi:ProduitConditionnement[]
-
-    @ManyToOne(()=>Approvisionnement, (approvision)=>approvision.apropocondis)
-    @JoinColumn()
-    approvision:Approvisionnement[]
-
-    @OneToMany(() => ApropoCondiMagasin, (aprocondimagasin) => aprocondimagasin.aprocondi)
-    aprocondimagasins: ApropoCondiMagasin[]
-
+    
     @CreateDateColumn()
     createdAt:Timestamp
     

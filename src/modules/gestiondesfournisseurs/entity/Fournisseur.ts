@@ -2,6 +2,7 @@ import { IsAlpha, IsNotEmpty } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
 import { DemandePrix } from "../../gestiondesapprovisionnements/entity/DemandePrix";
 import { CommandeFournisseur } from "../../gestiondesapprovisionnements/entity/CommandeFournisseur";
+import { Compte } from "../../gestiondesportefeuille/entity/Compte";
 
 @Entity()
 export class Fournisseur{
@@ -22,6 +23,9 @@ export class Fournisseur{
 
     @OneToMany(() => CommandeFournisseur, (fournisseurcommande) => fournisseurcommande.fournisseur)
     fournisseurcommandes: CommandeFournisseur[]
+
+    @OneToMany(() => Compte, (comptefournisseur) => comptefournisseur.fournisseur)
+    comptefournisseurs: Compte[]
 
     @Column()
     telFournisseur2:number
