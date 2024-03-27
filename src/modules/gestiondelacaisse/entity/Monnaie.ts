@@ -12,7 +12,7 @@ export class Monnaie{
     valeurMonnaie:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le libellé ne peut pas être nul"})
+    @IsNotEmpty({message:"Le libellé est obligatoire"})
     libelle:string
 
     @OneToMany(() => MonnaieCaisse, (monnaiecaisse) => monnaiecaisse.monnaie)
