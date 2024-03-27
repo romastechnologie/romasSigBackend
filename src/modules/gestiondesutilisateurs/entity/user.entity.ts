@@ -9,7 +9,6 @@ import {
     IsStrongPassword,
 } from "class-validator"
 import { CaisseUtilisateur } from "../../gestiondelacaisse/entity/CaisseUtilisateur";
-//import { Article } from "../../gestiondesarticles/entity/Article";
 // import { Bureau } from "../../gestiondesagences/entity/Bureau";
 // import { Abonne } from "../../gestiondesabonnets/entity/Abonne";
 @Entity()
@@ -54,17 +53,14 @@ export class User {
 
     @ManyToOne(() => Role, (role) => role.users,)
     role: Role
+
+    @OneToMany(() => CaisseUtilisateur, (caisseuser) => caisseuser.caisse)
+    caisseusers: CaisseUtilisateur[]
     
     @BeforeInsert()
     async addRef() {
         this.password =  await bcryptjs.hash(this.password, 12);
     }
-
-    // @OneToMany(() => Article, article => article.user)
-    // articles: Article[];
-
-    @OneToMany(() => CaisseUtilisateur, (caisseuser) => caisseuser.caisse)
-    caisseusers: CaisseUtilisateur[]
 
     @CreateDateColumn()
     createdAt:Date;

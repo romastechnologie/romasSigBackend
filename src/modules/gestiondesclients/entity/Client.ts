@@ -32,7 +32,7 @@ export class Client{
     telephone2:number
 
     @Column()
-    dateNais:string
+    dateNais:Date
 
     @Column({nullable:false})
     @IsNotEmpty({message:"La raison sociale est obligatoire."})
