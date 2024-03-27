@@ -8,11 +8,11 @@ export class Taxe{
     id:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La valeur de la taxe ne peut pas être nulle"})
+    @IsNotEmpty({message:"La valeur de la taxe est obligatoire."})
     valeurTaxe:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le libellé de la taxe ne peut pas être nul"})
+    @IsNotEmpty({message:"Le libellé de la taxe est obligatoire."})
     libelleTaxe:string
 
     @ManyToOne(()=>TypeTaxe, (typeTaxe)=>typeTaxe.taxes)

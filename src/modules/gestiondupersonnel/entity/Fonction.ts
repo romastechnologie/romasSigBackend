@@ -8,7 +8,7 @@ export class Fonction{
     id:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La fonction ne peut pas être nulle"})
+    @IsNotEmpty({message:"La fonction est obligatoire."})
     libelle:string
 
     @OneToMany(() => PersonnelFonction, (personnelfonction) => personnelfonction.fonction)

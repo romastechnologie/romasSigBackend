@@ -11,11 +11,11 @@ export class Client{
     id:number
     
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le nom du client ne peut pas être nul"})
+    @IsNotEmpty({message:"Le nom du client est obligatoire."})
     nomClient:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le prénom ne peut pas être nul"})
+    @IsNotEmpty({message:"Le prénom est obligatoire."})
     prenomClient:string
 
     @Column()
@@ -25,7 +25,7 @@ export class Client{
     emailClient:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le numéro de téléphone ne peut pas être nul"})
+    @IsNotEmpty({message:"Le numéro de téléphone est obligatoire."})
     telephone1:number
 
     @Column()
@@ -35,7 +35,7 @@ export class Client{
     dateNais:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La raison sociale ne peut pas être nulle"})
+    @IsNotEmpty({message:"La raison sociale est obligatoire."})
     raisonSociale:string
 
     @OneToMany(() => AdresseLivraison, (adresselivrclient) => adresselivrclient.client)
@@ -51,20 +51,20 @@ export class Client{
     clientransacs: Transaction[]
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"L'ifu ne peut pas être nul"})
+    @IsNotEmpty({message:"L'ifu est obligatoire."})
     ifu:number
     
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le RCCM ne peut pas être nul"})
+    @IsNotEmpty({message:"Le RCCM est obligatoire."})
     rccm:string
 
    
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le sigle ne peut pas être nul"})
+    @IsNotEmpty({message:"Le sigle est obligatoire."})
     sigle:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La dénomination ne peut pas être nulle"})
+    @IsNotEmpty({message:"La dénomination est obligatoire."})
     denomination:string
 
     @Column()

@@ -10,14 +10,14 @@ export class Fournisseur{
     id:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le nom du fournisseur ne peut pas être nul"})
+    @IsNotEmpty({message:"Le nom du fournisseur est obligatoire."})
     nomFournisseur:string
 
     @Column()
     adresseFournisseur:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le numéro de téléphone ne peut pas être nul"})
+    @IsNotEmpty({message:"Le numéro de téléphone est obligatoire."})
     telFournisseur1:number
 
     @OneToMany(() => DemandePrix, (fournisseurdemandpri) => fournisseurdemandpri.fournisseur)
@@ -36,26 +36,26 @@ export class Fournisseur{
     email:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"L'ifu ne peut pas être nul"})
+    @IsNotEmpty({message:"L'ifu est obligatoire."})
     ifu:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le sigle ne peut pas être nul"})
+    @IsNotEmpty({message:"Le sigle est obligatoire."})
     sigle:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La dénomination ne peut pas être nulle"})
+    @IsNotEmpty({message:"La dénomination est obligatoire."})
     denomination:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La date ne peut pas être nulle"})
+    @IsNotEmpty({message:"La date est obligatoire."})
     dateCreation:Date
 
     @Column()
     statut:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le RCCM ne peut pas être nul"})
+    @IsNotEmpty({message:"Le RCCM est obligatoire."})
     rccm:string
 
     @CreateDateColumn()

@@ -9,11 +9,11 @@ export class Societe{
     id:number
     
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le nom ne peut pas être nul"})
+    @IsNotEmpty({message:"Le nom est obligatoire."})
     nom:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le sigle ne peut pas être nul"})
+    @IsNotEmpty({message:"Le sigle est obligatoire."})
     sigle:string
 
     @Column()
@@ -23,15 +23,15 @@ export class Societe{
     logo:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La raison sociale ne peut pas être nulle"})
+    @IsNotEmpty({message:"La raison sociale est obligatoire."})
     raisonSocial:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"L' ifu ne peut pas être nul"})
+    @IsNotEmpty({message:"L' ifu est obligatoire."})
     ifu:number
     
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le RCCCM ne peut pas être nul"})
+    @IsNotEmpty({message:"Le RCCCM est obligatoire."})
     rccm:string
 
     @Column()

@@ -11,7 +11,7 @@ export class Magasin{
     id:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le nom du magasin ne peut pas être nul"})
+    @IsNotEmpty({message:"Le nom du magasin est obligatoire."})
     nomMagasin:string
 
     @Column()

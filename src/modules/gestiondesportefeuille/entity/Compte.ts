@@ -10,7 +10,7 @@ export class Compte{
     id:number
     
     @Column({nullable:false})
-    @IsNotEmpty({message:"L'intitulé de compte ne peut pas être nul"})
+    @IsNotEmpty({message:"L'intitulé de compte est obligatoire."})
     intituleCompte:string
 
     @Column()

@@ -9,11 +9,11 @@ export class DemandePrix{
     id:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le montant ne peut pas être nul"})
+    @IsNotEmpty({message:"Le montant est obligatoire."})
     montant:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La date ne peut pas être nul"})
+    @IsNotEmpty({message:"La date est obligatoire."})
     date:Date
 
     @ManyToOne(()=>Fournisseur, (fournisseur)=>fournisseur.fournisseurdemandprix)

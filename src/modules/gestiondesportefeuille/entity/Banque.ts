@@ -11,7 +11,7 @@ export class Banque{
     id:number
     
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le nom ne peut pas être nul"})
+    @IsNotEmpty({message:"Le nom est obligatoire."})
     nom:string
 
     @Column()

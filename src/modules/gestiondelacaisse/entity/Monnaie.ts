@@ -8,7 +8,7 @@ export class Monnaie{
     id:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La valeur ne peut pas être nulle"})
+    @IsNotEmpty({message:"La valeur est obligatoire."})
     valeurMonnaie:number
 
     @Column({nullable:false})

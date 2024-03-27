@@ -13,7 +13,7 @@ export class Produit{
     refProd:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le nom du produit ne peut pas être nul"})
+    @IsNotEmpty({message:"Le nom du produit est obligatoire."})
     @IsAlpha()
     nomProd:string
 
@@ -26,7 +26,7 @@ export class Produit{
     modeleProd:string
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La description ne peut pas être nul"})
+    @IsNotEmpty({message:"La description est obligatoire."})
     @IsAlpha()
     descProd:string
 

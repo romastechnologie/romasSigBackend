@@ -13,11 +13,11 @@ export class Paiement{
     id:number
     
     @Column({nullable:false})
-    @IsNotEmpty({message:"La date ne peut pas être nulle"})
+    @IsNotEmpty({message:"La date est obligatoire."})
     date:Date
     
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le montant réglé ne peut pas être nul"})
+    @IsNotEmpty({message:"Le montant réglé est obligatoire."})
     montantRegle:number
 
     @Column()

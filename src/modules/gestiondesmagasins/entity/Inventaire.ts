@@ -8,15 +8,15 @@ export class Inventaire{
     id:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La date de début ne peut pas être nulle"})
+    @IsNotEmpty({message:"La date de début est obligatoire."})
     dateDebut:Date
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La date de fin ne peut pas être nulle"})
+    @IsNotEmpty({message:"La date de fin est obligatoire."})
     dateFin:Date
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La période ne peut pas être nulle"})
+    @IsNotEmpty({message:"La période est obligatoire."})
     periode:string
 
     @OneToMany(() => ProCondiMagInventaire, (inventaiprocondimag) => inventaiprocondimag.inventaire)

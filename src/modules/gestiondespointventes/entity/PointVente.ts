@@ -11,7 +11,7 @@ export class PointVente{
     id:number
     
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le nom du point de vente ne peut pas être nul"})
+    @IsNotEmpty({message:"Le nom du point de vente est obligatoire."})
     nomPointVente:string
     
     @Column()

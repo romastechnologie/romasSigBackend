@@ -9,12 +9,12 @@ export class ProCondiCommandeClient{
     id:number
     
     @Column({nullable:false})
-    @IsNotEmpty({message:"La quantité ne peut pas être nulle"})
+    @IsNotEmpty({message:"La quantité est obligatoire."})
     qtite:number
 
     @Column()
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le montant ne peut pas être nul"})
+    @IsNotEmpty({message:"Le montant est obligatoire."})
     montant:number
 
     @ManyToOne(()=>CommandeClient, (commandeclient)=>commandeclient.proCondiCommandeClients)

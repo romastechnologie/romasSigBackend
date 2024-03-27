@@ -8,11 +8,11 @@ export class Sortie{
     id:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le montant ne peut pas être nul"})
+    @IsNotEmpty({message:"Le montant est obligatoire."})
     montant:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le motif de sortie ne peut pas être nul"})
+    @IsNotEmpty({message:"Le motif de sortie est obligatoire."})
     motifSortie:string
 
     @Column()

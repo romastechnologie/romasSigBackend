@@ -14,7 +14,7 @@ export class Approvisionnement{
     montant:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La date ne peut pas être nulle"})
+    @IsNotEmpty({message:"La date est obligatoire."})
     date:Date
 
     @ManyToOne(()=>CommandeFournisseur, (commandefourniseur)=>commandefourniseur.aprovisioncommandefournis)

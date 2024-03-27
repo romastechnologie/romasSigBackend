@@ -8,7 +8,7 @@ export class TypeTaxe{
     id:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le libellé de type ne peut pas être nul"})
+    @IsNotEmpty({message:"Le libellé de type est obligatoire."})
     libelleType:string
 
     @OneToMany(() => Taxe, (taxe) => taxe.typeTaxe)

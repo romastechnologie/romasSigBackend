@@ -10,7 +10,7 @@ export class AdresseLivraison{
     id:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le libellé ne peut pas être nul"})
+    @IsNotEmpty({message:"Le libellé est obligatoire."})
     libelleAdresse:string
 
     @ManyToOne(()=>Client, (client)=>client.adresselivrclients)

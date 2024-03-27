@@ -12,7 +12,7 @@ export class ProCondiMagasin{
     id:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"La quantité ne peut pas être nulle"})
+    @IsNotEmpty({message:"La quantité est obligatoire."})
     qtite:number
 
     @ManyToOne(()=>Magasin, (magasin)=>magasin.magasinprocondis)

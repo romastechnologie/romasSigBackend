@@ -29,19 +29,19 @@ export class CommandeClient{
     commandeclientlivrs: Livraison[]
     
     @Column({nullable:false})
-    @IsNotEmpty({message:"La date ne peut pas être nulle"})
+    @IsNotEmpty({message:"La date est obligatoire."})
     dateCommande:Date
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le montant HT ne peut pas être nul"})
+    @IsNotEmpty({message:"Le montant HT est obligatoire."})
     montHT:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le monatnt TTC ne peut pas être nul"})
+    @IsNotEmpty({message:"Le monatnt TTC est obligatoire."})
     montTTC:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le montant total ne peut pas être nul"})
+    @IsNotEmpty({message:"Le montant total est obligatoire."})
     montTotal:number
 
     @Column()
