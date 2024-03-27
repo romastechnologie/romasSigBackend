@@ -1,7 +1,5 @@
 import { IsAlpha, IsNotEmpty } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
-import { Fournisseur } from "../../gestiondesfournisseurs/entity/Fournisseur";
-import { DemandePrix } from "./DemandePrix";
 import { ProduitConditionnement } from "../../gestiondesconditionnements/entity/ProduitConditionnement";
 import { CommandeFournisseur } from "./CommandeFournisseur";
 

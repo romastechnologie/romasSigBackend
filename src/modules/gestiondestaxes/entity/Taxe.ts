@@ -7,10 +7,12 @@ export class Taxe{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La valeur de la taxe ne peut pas être nulle"})
     valeurTaxe:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le libellé de la taxe ne peut pas être nul"})
     libelleTaxe:string
 
     @ManyToOne(()=>TypeTaxe, (typeTaxe)=>typeTaxe.taxes)

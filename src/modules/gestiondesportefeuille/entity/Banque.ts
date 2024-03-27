@@ -10,7 +10,8 @@ export class Banque{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le nom ne peut pas être nul"})
     nom:string
 
     @Column()

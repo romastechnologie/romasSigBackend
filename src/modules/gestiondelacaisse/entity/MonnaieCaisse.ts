@@ -8,7 +8,8 @@ export class MonnaieCaisse{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le nombre ne peut pas être nul"})
     nombreMonnaie:number
 
     @Column()

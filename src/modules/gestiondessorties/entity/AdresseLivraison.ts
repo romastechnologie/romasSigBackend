@@ -9,7 +9,8 @@ export class AdresseLivraison{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le libellé ne peut pas être nul"})
     libelleAdresse:string
 
     @ManyToOne(()=>Client, (client)=>client.adresselivrclients)

@@ -10,7 +10,8 @@ export class Magasin{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le nom du magasin ne peut pas être nul"})
     nomMagasin:string
 
     @Column()

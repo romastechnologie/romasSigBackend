@@ -15,16 +15,19 @@ export class ProduitConditionnement{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La quantité de conditionnement ne peut pas être nulle"})
     qtiteConditionnement:number
 
     @Column()
     qtiteStockCondi:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le prix ne peut pas être nul"})
     prix:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le montant ne peut pas être nul"})
     montant:number
 
     @ManyToOne(()=>Produit, (produit)=>produit.produitconditionnements)

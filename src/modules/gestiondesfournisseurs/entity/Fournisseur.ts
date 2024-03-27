@@ -9,13 +9,15 @@ export class Fournisseur{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le nom du fournisseur ne peut pas être nul"})
     nomFournisseur:string
 
     @Column()
     adresseFournisseur:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le numéro de téléphone ne peut pas être nul"})
     telFournisseur1:number
 
     @OneToMany(() => DemandePrix, (fournisseurdemandpri) => fournisseurdemandpri.fournisseur)
@@ -33,22 +35,27 @@ export class Fournisseur{
     @Column()
     email:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"L'ifu ne peut pas être nul"})
     ifu:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le sigle ne peut pas être nul"})
     sigle:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La dénomination ne peut pas être nulle"})
     denomination:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La date ne peut pas être nulle"})
     dateCreation:Date
 
     @Column()
     statut:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le RCCM ne peut pas être nul"})
     rccm:string
 
     @CreateDateColumn()

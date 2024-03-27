@@ -8,10 +8,12 @@ export class Societe{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le nom ne peut pas être nul"})
     nom:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le sigle ne peut pas être nul"})
     sigle:string
 
     @Column()
@@ -20,13 +22,16 @@ export class Societe{
     @Column()
     logo:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La raison sociale ne peut pas être nulle"})
     raisonSocial:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"L' ifu ne peut pas être nul"})
     ifu:number
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le RCCCM ne peut pas être nul"})
     rccm:string
 
     @Column()

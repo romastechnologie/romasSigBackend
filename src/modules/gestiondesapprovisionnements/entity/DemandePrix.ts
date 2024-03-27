@@ -8,10 +8,12 @@ export class DemandePrix{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le montant ne peut pas être nul"})
     montant:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La date ne peut pas être nul"})
     date:Date
 
     @ManyToOne(()=>Fournisseur, (fournisseur)=>fournisseur.fournisseurdemandprix)

@@ -7,10 +7,12 @@ export class Sortie{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le montant ne peut pas être nul"})
     montant:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le motif de sortie ne peut pas être nul"})
     motifSortie:string
 
     @Column()

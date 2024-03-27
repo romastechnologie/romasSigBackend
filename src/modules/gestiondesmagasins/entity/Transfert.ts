@@ -9,13 +9,16 @@ export class Transfert{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le motif ne peut pas être nul"})
     motif:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La date ne peut pas être nulle"})
     date:Date
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le montant ne peut pas être nul"})
     montant:number
 
     @ManyToOne(()=>Magasin, (magasin1)=>magasin1.magasintransferts1)

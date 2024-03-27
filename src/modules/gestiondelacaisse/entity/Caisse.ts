@@ -8,16 +8,20 @@ export class Caisse{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le fond de roulement ne peut pas être nul"})
     fondRoulemnt:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le sole de cloture ne peut pas être nul"})
     soldeCloture:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La date d'ouverture ne peut pas être nulle"})
     dateHeureOuv:Date
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le date de fermerture ne peut pas être nulle"})
     dateHeureFer:Date
 
     @OneToMany(() => MonnaieCaisse, (monnaiecaisse) => monnaiecaisse.caisse)

@@ -7,7 +7,8 @@ export class ModePaiement{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le libellé ne peut pas être nul"})
     libelle:string
 
     @OneToMany(() => Paiement, (modepaiement) => modepaiement.modepaiement)
