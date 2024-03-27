@@ -10,10 +10,12 @@ export class Client{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le nom du client ne peut pas être nul"})
     nomClient:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le prénom ne peut pas être nul"})
     prenomClient:string
 
     @Column()
@@ -22,7 +24,8 @@ export class Client{
     @Column()
     emailClient:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le numéro de téléphone ne peut pas être nul"})
     telephone1:number
 
     @Column()
@@ -31,7 +34,8 @@ export class Client{
     @Column()
     dateNais:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La raison sociale ne peut pas être nulle"})
     raisonSociale:string
 
     @OneToMany(() => AdresseLivraison, (adresselivrclient) => adresselivrclient.client)
@@ -46,16 +50,21 @@ export class Client{
     @OneToMany(() => Transaction, (clientransac) => clientransac.client)
     clientransacs: Transaction[]
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"L'ifu ne peut pas être nul"})
     ifu:number
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le RCCM ne peut pas être nul"})
     rccm:string
 
-    @Column()
+   
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le sigle ne peut pas être nul"})
     sigle:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La dénomination ne peut pas être nulle"})
     denomination:string
 
     @Column()

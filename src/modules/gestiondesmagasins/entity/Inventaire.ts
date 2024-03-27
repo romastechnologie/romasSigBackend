@@ -7,13 +7,16 @@ export class Inventaire{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La date de début ne peut pas être nulle"})
     dateDebut:Date
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La date de fin ne peut pas être nulle"})
     dateFin:Date
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La période ne peut pas être nulle"})
     periode:string
 
     @OneToMany(() => ProCondiMagInventaire, (inventaiprocondimag) => inventaiprocondimag.inventaire)

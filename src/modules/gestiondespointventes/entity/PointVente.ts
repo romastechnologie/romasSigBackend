@@ -10,7 +10,8 @@ export class PointVente{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le nom du point de vente ne peut pas être nul"})
     nomPointVente:string
     
     @Column()

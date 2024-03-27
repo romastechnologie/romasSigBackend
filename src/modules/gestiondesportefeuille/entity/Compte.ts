@@ -9,7 +9,8 @@ export class Compte{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"L'intitulé de compte ne peut pas être nul"})
     intituleCompte:string
 
     @Column()

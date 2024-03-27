@@ -17,7 +17,7 @@ export const createCaisse = async (req: Request, res: Response) => {
     }
     await myDataSource.getRepository(Caisse).save(caisse)
     .then(Caisse => {
-        const message = `La Caisse ${req.body.id} a bien été créée.`
+        const message = `La caisse ${req.body.id} a bien été créée.`
         return success(res,201, caisse,message);
     })
     .catch(error => {
@@ -40,10 +40,10 @@ export const getAllCaisse = async (req: Request, res: Response) => {
         }
     })
     .then((retour) => {
-        const message = 'La liste des Caisses a bien été récupérée.';
+        const message = 'La liste des caisses a bien été récupérée.';
         return success(res,200,{data:retour}, message);
     }).catch(error => {
-        const message = `La liste des Caisses n'a pas pu être récupérée. Réessayez dans quelques instants.`
+        const message = `La liste des caisses n'a pas pu être récupérée. Réessayez dans quelques instants.`
         //res.status(500).json({ message, data: error })
         return generateServerErrorCode(res,500,error,message)
     })

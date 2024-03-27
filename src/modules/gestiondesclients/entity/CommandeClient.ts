@@ -28,16 +28,20 @@ export class CommandeClient{
     @OneToMany(() => Livraison, (commandeclientlivr) => commandeclientlivr.commandeclient)
     commandeclientlivrs: Livraison[]
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La date ne peut pas être nulle"})
     dateCommande:Date
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le montant HT ne peut pas être nul"})
     montHT:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le monatnt TTC ne peut pas être nul"})
     montTTC:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le montant total ne peut pas être nul"})
     montTotal:number
 
     @Column()

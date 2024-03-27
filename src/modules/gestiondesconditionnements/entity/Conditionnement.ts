@@ -7,7 +7,8 @@ export class Conditionnement{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le libellé ne peut pas être nul"})
     libelle:string
 
     @OneToMany(() => ProduitConditionnement, (produitconditionnement) => produitconditionnement.conditionnement)

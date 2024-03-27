@@ -7,7 +7,8 @@ export class Fonction{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La fonction ne peut pas être nulle"})
     libelle:string
 
     @OneToMany(() => PersonnelFonction, (personnelfonction) => personnelfonction.fonction)

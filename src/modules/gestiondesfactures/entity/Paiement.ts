@@ -12,10 +12,12 @@ export class Paiement{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La date ne peut pas être nulle"})
     date:Date
     
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le montant réglé ne peut pas être nul"})
     montantRegle:number
 
     @Column()

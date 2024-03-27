@@ -8,16 +8,20 @@ export class Caisse{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le fond de roulement est obligatoire."})
     fondRoulemnt:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le solde de clôture est obligatoire."})
     soldeCloture:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La date d'ouverture est obligatoire."})
     dateHeureOuv:Date
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le date de fermerture est obligatoire."})
     dateHeureFer:Date
 
     @OneToMany(() => MonnaieCaisse, (monnaiecaisse) => monnaiecaisse.caisse)

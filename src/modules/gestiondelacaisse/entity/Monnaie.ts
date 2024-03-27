@@ -7,10 +7,12 @@ export class Monnaie{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La valeur ne peut pas être nulle"})
     valeurMonnaie:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le libellé est obligatoire"})
     libelle:string
 
     @OneToMany(() => MonnaieCaisse, (monnaiecaisse) => monnaiecaisse.monnaie)

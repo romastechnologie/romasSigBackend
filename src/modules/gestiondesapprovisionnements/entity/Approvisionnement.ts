@@ -13,7 +13,8 @@ export class Approvisionnement{
     @Column()
     montant:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La date ne peut pas être nulle"})
     date:Date
 
     @ManyToOne(()=>CommandeFournisseur, (commandefourniseur)=>commandefourniseur.aprovisioncommandefournis)

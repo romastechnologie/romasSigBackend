@@ -9,7 +9,8 @@ export class CommandeFournisseur{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le montant ne peut pas être nul"})
     montant:number
 
     @ManyToOne(()=>Fournisseur, (fournisseur)=>fournisseur.fournisseurcommandes)

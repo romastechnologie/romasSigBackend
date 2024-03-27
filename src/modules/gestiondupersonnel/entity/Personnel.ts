@@ -9,10 +9,12 @@ export class Personnel{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le nom est obligatoire"})
     nom:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le prénom est obligatoire"})
     prenom:string
 
     @Column()
@@ -24,7 +26,8 @@ export class Personnel{
     @Column()
     dateNais:Date
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le téléphone est obligatoire"})
     tel:number
 
     @Column()
@@ -33,10 +36,12 @@ export class Personnel{
     @Column()
     adresse:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le nom d'utilisateur est obligatoire"})
     nomUtilisateur:string
 
-    @Column()
+    @Column({nullable:false})
+    @IsNotEmpty({message:"Le mot de passe est obligatoire"})
     motPasse:string
 
     @OneToMany(() => PersonnelFonction, (personnelfonction) => personnelfonction.personnel)
