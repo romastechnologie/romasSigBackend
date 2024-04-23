@@ -39,6 +39,7 @@ import { facturesRoutes } from "./modules/gestiondesfactures/route/facture.route
 import { modepaiementsRoutes } from "./modules/gestiondesfactures/route/modepaiement.route";
 import { paiementsRoutes } from "./modules/gestiondesfactures/route/paiement.route";
 import { fournisseursRoutes } from "./modules/gestiondesfournisseurs/route.ts/fournisseur.route";
+import { sortiesRoutes } from "./modules/gestiondessorties/route/sortie.route";
 
 
 require("dotenv").config();
@@ -140,7 +141,7 @@ paiementsRoutes(app);
 
 pointventesRoutes(app);
 
-
+sortiesRoutes(app);
 
 
 //Autorisation des entêtes
