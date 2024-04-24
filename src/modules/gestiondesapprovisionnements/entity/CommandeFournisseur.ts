@@ -20,7 +20,7 @@ export class CommandeFournisseur{
     @OneToMany(() => CommandeFourniProCondi, (commandefourniseurprocondi) => commandefourniseurprocondi.commandefourniseur)
     commandefourniseurprocondis: CommandeFourniProCondi[]
 
-    @OneToMany(() => Approvisionnement, (aprovisioncommandefourni) => aprovisioncommandefourni.commandefourniseur)
+    @OneToMany(() => Approvisionnement, (aprovisioncommandefourni) => aprovisioncommandefourni.commandefournisseur)
     aprovisioncommandefournis: Approvisionnement[]
 
     @CreateDateColumn()

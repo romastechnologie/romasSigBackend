@@ -17,9 +17,9 @@ export class Approvisionnement{
     @IsNotEmpty({message:"La date est obligatoire."})
     date:Date
 
-    @ManyToOne(()=>CommandeFournisseur, (commandefourniseur)=>commandefourniseur.aprovisioncommandefournis)
+    @ManyToOne(()=>CommandeFournisseur, (commandefournisseur)=>commandefournisseur.aprovisioncommandefournis)
     @JoinColumn()
-    commandefourniseur:CommandeFournisseur[]
+    commandefournisseur:CommandeFournisseur[]
 
     @OneToMany(() => AProCondi, (apropocondi) => apropocondi.approvision)
     apropocondis: AProCondi[]

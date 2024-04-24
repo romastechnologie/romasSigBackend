@@ -36,7 +36,7 @@ export const createApprovisionnement = async (req: Request, res: Response) => {
 export const getAllApprovisionnement = async (req: Request, res: Response) => {
     await myDataSource.getRepository(Approvisionnement).find({
         relations:{
-            commandefourniseur:true,
+            commandefournisseur:true,
             apropocondis: true
         }
     })
@@ -56,7 +56,7 @@ export const getApprovisionnement = async (req: Request, res: Response) => {
             id: parseInt(req.params.id),
         },
         relations: {
-            commandefourniseur:true,
+            commandefournisseur:true,
             apropocondis: true
     },
     })
@@ -83,7 +83,7 @@ export const updateApprovisionnement = async (req: Request, res: Response) => {
         },
         relations: {
            
-            commandefourniseur:true,
+            commandefournisseur:true,
             apropocondis: true
         },
     }
@@ -121,7 +121,7 @@ export const deleteApprovisionnement = async (req: Request, res: Response) => {
             id: parseInt(req.params.id)
         },
         relations:{
-            commandefourniseur:true,
+            commandefournisseur:true,
             apropocondis: true
            
         }
