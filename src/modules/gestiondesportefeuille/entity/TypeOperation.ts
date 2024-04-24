@@ -7,7 +7,7 @@ export class TypeOperation{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column()
+    @Column({nullable:false})
     libelle:string
 
     @OneToMany(() => Transaction, (typeopertransac) => typeopertransac.typeoperation)

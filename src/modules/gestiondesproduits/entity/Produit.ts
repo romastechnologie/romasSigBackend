@@ -9,7 +9,7 @@ export class Produit{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column({unique: true})
+    @Column({unique: true, nullable:false})
     refProd:string
 
     @Column({nullable:false})
@@ -17,11 +17,11 @@ export class Produit{
     @IsAlpha()
     nomProd:string
 
-    @Column()
+    @Column({nullable:true})
     @IsAlpha()
     marqProd:string
 
-    @Column()
+    @Column({nullable:true})
     @IsAlpha()
     modeleProd:string
 
@@ -39,20 +39,20 @@ export class Produit{
     @OneToMany(() => ProduitConditionnement, (produitconditionnement) => produitconditionnement.produit)
     produitconditionnements: ProduitConditionnement[]
 
-    @Column()
+    @Column({nullable:true})
     codeQR:number
 
-    @Column()
+    @Column({nullable:true})
     codeBarre:number
     
     @ManyToOne(()=>Famille, (famille)=>famille.produits)
     @JoinColumn()
     famille:Famille[]
     
-    @Column()
+    @Column({nullable:true})
     seuilAppro:number
 
-    @Column()
+    @Column({nullable:true})
     seuilAlerte:number
 
     @CreateDateColumn()

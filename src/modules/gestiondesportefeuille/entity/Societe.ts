@@ -16,10 +16,10 @@ export class Societe{
     @IsNotEmpty({message:"Le sigle est obligatoire."})
     sigle:string
 
-    @Column()
+    @Column({nullable:true})
     adresse:string
 
-    @Column()
+    @Column({nullable:true})
     logo:string
 
     @Column({nullable:false})

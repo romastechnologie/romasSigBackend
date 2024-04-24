@@ -8,7 +8,7 @@ export class ProCondiMagInventaire{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
     dateDebut:Date
 
     @ManyToOne(()=>ProCondiMagasin, (procondimag)=>procondimag.procondimaginventaires)

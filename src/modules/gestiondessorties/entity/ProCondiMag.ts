@@ -10,10 +10,10 @@ export class ProCondiMag{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:true})
     qtite:number
 
-    @Column()
+    @Column({nullable:true})
     qtiteRestante:number
 
     @ManyToOne(()=>Livraison, (livraison)=>livraison.procondimaglivraisons)

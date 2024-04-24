@@ -8,10 +8,10 @@ export class CommandeFourniProCondi{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:true})
     montant:number
 
-    @Column()
+    @Column({nullable:true})
     qtité:number
 
     @ManyToOne(()=>CommandeFournisseur, (commandefourniseur)=>commandefourniseur.commandefourniseurprocondis)

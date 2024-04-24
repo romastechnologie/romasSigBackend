@@ -19,7 +19,7 @@ export class ProduitConditionnement{
     @IsNotEmpty({message:"La quantité de conditionnement est obligatoire."})
     qtiteConditionnement:number
 
-    @Column()
+    @Column({nullable:true})
     qtiteStockCondi:number
 
     @Column({nullable:false})

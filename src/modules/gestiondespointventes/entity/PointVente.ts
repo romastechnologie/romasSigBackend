@@ -14,7 +14,7 @@ export class PointVente{
     @IsNotEmpty({message:"Le nom du point de vente est obligatoire."})
     nomPointVente:string
     
-    @Column()
+    @Column({nullable:true})
     adresse:string
 
     @ManyToOne(()=>Personnel, (personnel)=>personnel.personelpointvents)

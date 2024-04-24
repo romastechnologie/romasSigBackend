@@ -9,13 +9,13 @@ export class MonnaieCaisse{
     id:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le nombre est obligatoire."})
+    @IsNotEmpty({message:"Le nombre de monnaie est obligatoire."})
     nombreMonnaie:number
 
-    @Column()
+    @Column({nullable:false})
     montant:number
 
-    @Column()
+    @Column({nullable:false})
     ouverture:boolean
 
     @ManyToOne(()=>Caisse, (caisse)=>caisse.monnaiecaisses)

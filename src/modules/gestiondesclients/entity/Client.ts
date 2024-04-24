@@ -28,10 +28,10 @@ export class Client{
     @IsNotEmpty({message:"Le numéro de téléphone est obligatoire."})
     telephone1:number
 
-    @Column()
+    @Column({nullable:true})
     telephone2:number
 
-    @Column()
+    @Column({nullable:true})
     dateNais:Date
 
     @Column({nullable:false})
@@ -58,7 +58,6 @@ export class Client{
     @IsNotEmpty({message:"Le RCCM est obligatoire."})
     rccm:string
 
-   
     @Column({nullable:false})
     @IsNotEmpty({message:"Le sigle est obligatoire."})
     sigle:string
@@ -67,7 +66,7 @@ export class Client{
     @IsNotEmpty({message:"La dénomination est obligatoire."})
     denomination:string
 
-    @Column()
+    @Column({nullable:true})
     dateCreation:Date
 
     @Column()

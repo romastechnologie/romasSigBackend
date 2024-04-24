@@ -10,7 +10,7 @@ export class Livraison{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
     date:Date
 
     @ManyToOne(()=>CommandeClient, (commandeclient)=>commandeclient.commandeclientlivrs)

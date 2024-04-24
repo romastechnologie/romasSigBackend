@@ -10,7 +10,7 @@ export class ProCondiTrans{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
     qtite:number
 
     @ManyToOne(()=>Transfert, (transfert)=>transfert.transfertprocondis)

@@ -12,7 +12,7 @@ export class SortieProCondi{
     @IsNotEmpty({message:"La quantité est obligatoire."})
     qtite:number
 
-    @Column()
+    @Column({nullable:true})
     prixProd:number
 
     @ManyToOne(()=>Sortie, (livraison)=>livraison.sortiprocondis)

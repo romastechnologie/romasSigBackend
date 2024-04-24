@@ -6,22 +6,22 @@ export class Media{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:true})
     photo:string
 
-    @Column()
+    @Column({nullable:true})
     nomMedia:string
 
-    @Column()
+    @Column({nullable:true})
     typeMedia:string
 
-    @Column()
+    @Column({nullable:true})
     extension:string
 
-    @Column()
+    @Column({nullable:true})
     idtable:number
 
-    @Column()
+    @Column({nullable:true})
     nomTable:string
    
     @CreateDateColumn()

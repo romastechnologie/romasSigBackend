@@ -9,10 +9,10 @@ export class DemandePrixProCondi{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:true})
     montant:number
 
-    @Column()
+    @Column({nullable:true})
     qtité:number
 
     @ManyToOne(()=>DemandePrix, (demandepri)=>demandepri.demandepriprocondis)

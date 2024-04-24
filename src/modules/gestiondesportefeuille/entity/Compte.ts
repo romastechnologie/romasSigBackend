@@ -13,7 +13,7 @@ export class Compte{
     @IsNotEmpty({message:"L'intitulé de compte est obligatoire."})
     intituleCompte:string
 
-    @Column()
+    @Column({nullable:false})
     solde:number
 
     @ManyToOne(()=>Client, (client)=>client.compteclients)

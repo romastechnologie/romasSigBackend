@@ -37,17 +37,17 @@ export class CommandeClient{
     montHT:number
 
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le monatnt TTC est obligatoire."})
+    @IsNotEmpty({message:"Le montant TTC est obligatoire."})
     montTTC:number
 
     @Column({nullable:false})
     @IsNotEmpty({message:"Le montant total est obligatoire."})
     montTotal:number
 
-    @Column()
+    @Column({nullable:true})
     statutCommande:string
 
-    @Column()
+    @Column({nullable:true})
     remise:number
 
     @CreateDateColumn()

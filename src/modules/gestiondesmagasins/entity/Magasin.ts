@@ -14,7 +14,7 @@ export class Magasin{
     @IsNotEmpty({message:"Le nom du magasin est obligatoire."})
     nomMagasin:string
 
-    @Column()
+    @Column({nullable:true})
     adresse:string
 
     @ManyToOne(()=>Personnel, (personnel)=>personnel.personnelmagasins)

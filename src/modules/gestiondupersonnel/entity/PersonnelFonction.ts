@@ -8,13 +8,13 @@ export class PersonnelFonction{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:true})
     nombreFonction:number
 
-    @Column()
+    @Column({nullable:true})
     dateDebutFonc:Date
 
-    @Column()
+    @Column({nullable:true})
     dateFinFonc:Date
 
     @Column()
