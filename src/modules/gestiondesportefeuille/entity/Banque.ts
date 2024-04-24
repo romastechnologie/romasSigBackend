@@ -14,10 +14,10 @@ export class Banque{
     @IsNotEmpty({message:"Le nom est obligatoire."})
     nom:string
 
-    @Column()
+    @Column({nullable:true})
     adresse:string
 
-    @Column()
+    @Column({nullable:false})
     numCompte:number
 
     @ManyToOne(()=>Societe, (societe)=>societe.banquesocietes)

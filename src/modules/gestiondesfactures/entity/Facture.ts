@@ -10,10 +10,10 @@ export class Facture{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column()
+    @Column({nullable:false})
     date:Date
     
-    @Column()
+    @Column({nullable:false})
     montFact:string
 
     @OneToMany(() => Paiement, (facturepaiement) => facturepaiement.facture)

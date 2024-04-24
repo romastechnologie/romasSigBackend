@@ -9,7 +9,7 @@ export class CaisseUtilisateur{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:true})
     nombreMonnaie:number
 
     @Column()

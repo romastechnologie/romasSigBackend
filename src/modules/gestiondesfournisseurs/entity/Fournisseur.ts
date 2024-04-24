@@ -13,7 +13,7 @@ export class Fournisseur{
     @IsNotEmpty({message:"Le nom du fournisseur est obligatoire."})
     nomFournisseur:string
 
-    @Column()
+    @Column({nullable:true})
     adresseFournisseur:string
 
     @Column({nullable:false})
@@ -29,10 +29,10 @@ export class Fournisseur{
     @OneToMany(() => Compte, (comptefournisseur) => comptefournisseur.fournisseur)
     comptefournisseurs: Compte[]
 
-    @Column()
+    @Column({nullable:true})
     telFournisseur2:number
 
-    @Column()
+    @Column({nullable:true})
     email:string
 
     @Column({nullable:false})

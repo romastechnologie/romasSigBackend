@@ -7,10 +7,10 @@ export class Famille{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column({unique: true})
+    @Column({unique: true,nullable:true})
     codeFamille:string
 
-    @Column()
+    @Column({nullable:false})
     @IsAlpha()
     libelleFamille:string
    

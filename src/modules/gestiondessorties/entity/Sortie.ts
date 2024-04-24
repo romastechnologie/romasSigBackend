@@ -15,7 +15,7 @@ export class Sortie{
     @IsNotEmpty({message:"Le motif de sortie est obligatoire."})
     motifSortie:string
 
-    @Column()
+    @Column({nullable:false})
     date:Date
 
     @OneToMany(() => SortieProCondi, (sortiprocondi) => sortiprocondi.sortie)

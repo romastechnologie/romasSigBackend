@@ -17,23 +17,23 @@ export class Personnel{
     @IsNotEmpty({message:"Le prénom est obligatoire"})
     prenom:string
 
-    @Column()
+    @Column({nullable:false})
     sexe:string
 
-    @Column()
+    @Column({nullable:true})
     civilite:string
 
-    @Column()
+    @Column({nullable:true})
     dateNais:Date
 
     @Column({nullable:false})
     @IsNotEmpty({message:"Le téléphone est obligatoire"})
     tel:number
 
-    @Column()
+    @Column({nullable:true})
     email:string
 
-    @Column()
+    @Column({nullable:true})
     adresse:string
 
     @Column({nullable:false})

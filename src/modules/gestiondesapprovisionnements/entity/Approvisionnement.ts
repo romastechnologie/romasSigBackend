@@ -10,7 +10,7 @@ export class Approvisionnement{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
     montant:number
 
     @Column({nullable:false})

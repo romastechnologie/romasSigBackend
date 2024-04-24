@@ -10,10 +10,10 @@ export class Transaction{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column()
+    @Column({nullable:true})
     motifTrans:string
 
-    @Column()
+    @Column({nullable:true})
     montTrans:string
 
     @ManyToOne(()=>Client, (client)=>client.clientransacs)

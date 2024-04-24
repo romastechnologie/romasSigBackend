@@ -10,7 +10,7 @@ export class ApropoCondiMagasin{
     @PrimaryGeneratedColumn()
     id:number
 
-    @Column()
+    @Column({nullable:false})
     qtite:number
 
     @ManyToOne(()=>Magasin, (magasin)=>magasin.magasinaprocondis)

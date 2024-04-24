@@ -20,7 +20,7 @@ export class Paiement{
     @IsNotEmpty({message:"Le montant réglé est obligatoire."})
     montantRegle:number
 
-    @Column()
+    @Column({nullable:false})
     montantRest:number
 
     @ManyToOne(()=>ModePaiement, (modepaiement)=>modepaiement.modepaiements)
