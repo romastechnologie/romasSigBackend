@@ -4,6 +4,7 @@ import { CommandeClient } from "./CommandeClient";
 import { AdresseLivraison } from "../../gestiondessorties/entity/AdresseLivraison";
 import { Compte } from "../../gestiondesportefeuille/entity/Compte";
 import { Transaction } from "../../gestiondesportefeuille/entity/Transaction";
+import { Sortie } from "../../gestiondessorties/entity/Sortie";
 
 @Entity()
 export class Client{
@@ -49,6 +50,9 @@ export class Client{
 
     @OneToMany(() => Transaction, (clientransac) => clientransac.client)
     clientransacs: Transaction[]
+
+    @OneToMany(() => Sortie, (client) => client.sortie)
+    clients: Sortie[];
 
     @Column({nullable:false})
     @IsNotEmpty({message:"L'ifu est obligatoire."})

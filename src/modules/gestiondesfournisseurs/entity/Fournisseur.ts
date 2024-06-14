@@ -3,6 +3,7 @@ import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, ManyToM
 import { DemandePrix } from "../../gestiondesapprovisionnements/entity/DemandePrix";
 import { CommandeFournisseur } from "../../gestiondesapprovisionnements/entity/CommandeFournisseur";
 import { Compte } from "../../gestiondesportefeuille/entity/Compte";
+import { Approvisionnement } from "../../gestiondesapprovisionnements/entity/Approvisionnement";
 
 @Entity()
 export class Fournisseur{
@@ -28,6 +29,9 @@ export class Fournisseur{
 
     @OneToMany(() => Compte, (comptefournisseur) => comptefournisseur.fournisseur)
     comptefournisseurs: Compte[]
+
+    @OneToMany(() => Approvisionnement, (approvisionnement) => approvisionnement.fournisseur)
+    approvisionnements: Approvisionnement[]
 
     @Column({nullable:true})
     telFournisseur2:number

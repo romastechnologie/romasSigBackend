@@ -4,6 +4,7 @@ import { Fournisseur } from "../../gestiondesfournisseurs/entity/Fournisseur";
 import { Personnel } from "../../gestiondupersonnel/entity/Personnel";
 import { Transfert } from "./Transfert";
 import { ProCondiMagasin } from "./ProCondiMagasin";
+import { Produit } from "../../gestiondesproduits/entity/Produit";
 
 @Entity()
 export class Magasin{
@@ -32,6 +33,9 @@ export class Magasin{
 
     @OneToMany(() => ProCondiMagasin, (magasinaprocondi) => magasinaprocondi.magasin)
     magasinaprocondis: ProCondiMagasin[]
+
+    @OneToMany(() => Produit, (produit) => produit.magasin)
+    produits: Produit[]
 
     @CreateDateColumn()
     createdAt:Timestamp

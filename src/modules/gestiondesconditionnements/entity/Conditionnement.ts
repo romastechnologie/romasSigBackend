@@ -11,6 +11,10 @@ export class Conditionnement{
     @IsNotEmpty({message:"Le libellé est obligatoire."})
     libelle:string
 
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La quantité est obligatoire."})
+    quantite:number
+
     @OneToMany(() => ProduitConditionnement, (produitconditionnement) => produitconditionnement.conditionnement)
     produitconditionnements: ProduitConditionnement[]
 
