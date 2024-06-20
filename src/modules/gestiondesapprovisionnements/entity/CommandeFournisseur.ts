@@ -13,6 +13,9 @@ export class CommandeFournisseur{
     @IsNotEmpty({message:"Le montant est obligatoire."})
     montant:number
 
+    @Column({nullable:true})
+    dateD:Date
+
     @ManyToOne(()=>Fournisseur, (fournisseur)=>fournisseur.fournisseurcommandes)
     @JoinColumn()
     fournisseur:Fournisseur[]

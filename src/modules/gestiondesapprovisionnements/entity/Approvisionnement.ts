@@ -16,8 +16,8 @@ export class Approvisionnement{
     @Column({nullable:true})
     refAppro:string
 
-    @Column({nullable:false})
-    @IsNotEmpty({message:"La date est obligatoire."})
+    @Column({ nullable: true})
+    // @Column({ nullable: true, default: () => 'CURRENT_TIMESTAMP' })
     dateAppro:Date
 
     @ManyToOne(()=>CommandeFournisseur, (commandefournisseur)=>commandefournisseur.aprovisioncommandefournis)
