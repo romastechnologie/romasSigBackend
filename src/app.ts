@@ -75,7 +75,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 //Gestion des cors
 app.use(cors(
-    {origin:  ['http://localhost:3000','http://localhost:8080','http://localhost:8081','http://192.168.8.59:3003' ],
+    {origin:  ['http://localhost:3000','http://localhost:8082','http://localhost:8080','http://localhost:8081','http://192.168.8.59:3003' ],
     credentials: true
 }));
 
