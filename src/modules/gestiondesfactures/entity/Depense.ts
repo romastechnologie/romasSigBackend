@@ -1,26 +1,28 @@
 import { IsAlpha, IsNotEmpty } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
-import { Fournisseur } from "../../gestiondesfournisseurs/entity/Fournisseur";
-import { DemandePrixProCondi } from "./DemandePrixProCondi";
 
 @Entity()
-export class DemandePrix{
+export class Depense{
     @PrimaryGeneratedColumn()
     id:number
-
+    
+    @Column({nullable:false})
+    @IsNotEmpty({message:"La date est obligatoire."})
+    dateDepense:Date
+    
     @Column({nullable:false})
     @IsNotEmpty({message:"Le montant est obligatoire."})
     montant:number
 
     @Column({nullable:true})
-    dateD:Date
+    beneficiaire:string
 
-    @ManyToOne(()=>Fournisseur, (fournisseur)=>fournisseur.fournisseurdemandprix)
-    @JoinColumn()
-    fournisseur:Fournisseur[]
+    @Column({nullable:true})
+    typeDepense:string
 
-    @OneToMany(() => DemandePrixProCondi, (demandepriprocondi) => demandepriprocondi.demandepri)
-    demandepriprocondis: DemandePrixProCondi[]
+    // @ManyToOne(()=>ModeDepense, (modepaiement)=>modepaiement.modepaiements)
+    // @JoinColumn()
+    // modepaiement:ModeDepense[]
 
     @CreateDateColumn()
     createdAt:Timestamp

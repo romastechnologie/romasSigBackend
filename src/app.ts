@@ -42,6 +42,7 @@ import { fournisseursRoutes } from "./modules/gestiondesfournisseurs/route.ts/fo
 import { sortiesRoutes } from "./modules/gestiondessorties/route/sortie.route";
 import { commandeClientsRoutes } from "./modules/gestiondesclients/route/commandeclient.route";
 import { commandeFournisseursRoutes } from "./modules/gestiondesapprovisionnements/route/commandefournisseur.route";
+import { depensesRoutes } from "./modules/gestiondesfactures/route/depense.route";
 
 
 require("dotenv").config();
@@ -144,6 +145,8 @@ paiementsRoutes(app);
 pointventesRoutes(app);
 
 sortiesRoutes(app);
+
+depensesRoutes(app)
 
 commandeClientsRoutes(app);
 

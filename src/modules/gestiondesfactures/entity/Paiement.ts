@@ -14,14 +14,24 @@ export class Paiement{
     
     @Column({nullable:false})
     @IsNotEmpty({message:"La date est obligatoire."})
-    date:Date
+    datePaiement:Date
     
     @Column({nullable:false})
-    @IsNotEmpty({message:"Le montant réglé est obligatoire."})
-    montantRegle:number
+    @IsNotEmpty({message:"Le montant payé est obligatoire."})
+    montantPaye:number
 
     @Column({nullable:false})
+    @IsNotEmpty({message:"Le montant réglé est obligatoire."})
+    montantDu:number
+
+    @Column({nullable:true})
     montantRest:number
+
+    @Column({nullable:true})
+    montantRecu:number
+
+    @Column({nullable:true})
+    reliquat:number
 
     @ManyToOne(()=>ModePaiement, (modepaiement)=>modepaiement.modepaiements)
     @JoinColumn()
