@@ -3,6 +3,7 @@ import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTab
 import { Famille } from "./Famille";
 import { ProduitConditionnement } from "../../gestiondesconditionnements/entity/ProduitConditionnement";
 import { Magasin } from "../../gestiondesmagasins/entity/Magasin";
+import { Vente } from "../../gestiondespointventes/entity/Vente";
 
 
 @Entity()
@@ -78,6 +79,9 @@ export class Produit{
 
     @Column({nullable:true})
     seuilAlerte:number
+
+    @ManyToMany(() => Vente, (vente) => vente.produitventes)
+    ventes: Vente[]
 
     @CreateDateColumn()
     createdAt:Timestamp

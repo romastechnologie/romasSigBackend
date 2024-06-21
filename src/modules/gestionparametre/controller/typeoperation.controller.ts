@@ -16,17 +16,17 @@ export const createTypeOperation= async (req: Request, res: Response) => {
     }
     await myDataSource.getRepository(TypeOperation).save(typeOperation)
     .then(typeOperation => {
-        const message = `Le type de taxe${req.body.id} a bien été créé.`
+        const message = `Le type d\'opération${req.body.id} a bien été créé.`
         return success(res,201, typeOperation,message);
     })
     .catch(error => {
         if(error instanceof ValidationError) {
-            return generateServerErrorCode(res,400,error,'Ce type de taxe existe déjà.')
+            return generateServerErrorCode(res,400,error,'Ce type d\'opération existe déjà.')
         }
         if(error.code == "ER_DUP_ENTRY") {
-            return generateServerErrorCode(res,400,error,'Ce type de taxe  existe déjà.')
+            return generateServerErrorCode(res,400,error,'Ce type d\'opération  existe déjà.')
         }
-        const message = `Le type de taxe n'a pas pu être ajouté. Réessayez dans quelques instants.`
+        const message = `Le type d\'opération n'a pas pu être ajouté. Réessayez dans quelques instants.`
         return generateServerErrorCode(res,500,error,message)
     })
 }
@@ -52,14 +52,14 @@ export const getTypeOperation = async (req: Request, res: Response) => {
     })
     .then(typeOperation => {
         if(typeOperation === null) {
-          const message = `Le type de taxedemandé n'existe pas. Réessayez avec un autre identifiant.`
+          const message = `Le type d\'opérationdemandé n'existe pas. Réessayez avec un autre identifiant.`
           return generateServerErrorCode(res,400,"L'id n'existe pas",message)
         }
-        const message = `Le type de taxea bien été trouvée.`
+        const message = `Le type d\'opérationa bien été trouvée.`
         return success(res,200, typeOperation,message);
     })
     .catch(error => {
-        const message = `Le type de taxe n'a pas pu être récupérée. Réessayez dans quelques instants.`
+        const message = `Le type d\'opération n'a pas pu être récupérée. Réessayez dans quelques instants.`
         return generateServerErrorCode(res,500,error,message)
     })
 };
@@ -74,7 +74,7 @@ export const updateTypeOperation = async (req: Request, res: Response) => {
     }
     )
     if (!typeOperation) {
-        return generateServerErrorCode(res,400,"L'id n'existe pas",'Ce type de taxe existe déjà')
+        return generateServerErrorCode(res,400,"L'id n'existe pas",'Ce type d\'opération existe déjà')
     }
     myDataSource.getRepository(TypeOperation).merge(typeOperation,req.body);
     const errors = await validate(typeOperation);
@@ -83,16 +83,16 @@ export const updateTypeOperation = async (req: Request, res: Response) => {
         return generateServerErrorCode(res,400,errors,message)
     }
     await myDataSource.getRepository(TypeOperation).save(typeOperation).then(typeOperation => {
-        const message = `Le type de taxe${typeOperation.id} a bien été modifié.`
+        const message = `Le type d\'opération${typeOperation.id} a bien été modifié.`
         return success(res,200,typeOperation,message);
     }).catch(error => {
         if(error instanceof ValidationError) {
-            return generateServerErrorCode(res,400,error,'Ce type de taxe existe déjà')
+            return generateServerErrorCode(res,400,error,'Ce type d\'opération existe déjà')
         }
         if(error.code == "ER_DUP_ENTRY") {
-            return generateServerErrorCode(res,400,error,'Ce type de taxe existe déjà')
+            return generateServerErrorCode(res,400,error,'Ce type d\'opération existe déjà')
         }
-        const message = `Le type de taxe n'a pas pu être ajouté. Réessayez dans quelques instants.`
+        const message = `Le type d\'opération n'a pas pu être ajouté. Réessayez dans quelques instants.`
         return generateServerErrorCode(res,500,error,message)
         // res.status(500).json({ message, data: error }) 
     })
@@ -108,22 +108,22 @@ export const deleteTypeOperation = async (req: Request, res: Response) => {
         })
     .then(typeOperation => {        
         if(typeOperation === null) {
-          const message = `Le type de taxedemandée n'existe pas. Réessayez avec un autre identifiant.`
+          const message = `Le type d\'opérationdemandée n'existe pas. Réessayez avec un autre identifiant.`
           return generateServerErrorCode(res,400,"L'id n'existe pas",message);
         }
 
         if(resultat){
-            const message = `Ce type de taxe est lié à d'autres enregistrements. Vous ne pouvez pas le supprimer.`
-            return generateServerErrorCode(res,400,"Ce type de taxeest lié à d'autres enregistrements. Vous ne pouvez pas le supprimer.",message);
+            const message = `Ce type d\'opération est lié à d'autres enregistrements. Vous ne pouvez pas le supprimer.`
+            return generateServerErrorCode(res,400,"Ce type d\'opérationest lié à d'autres enregistrements. Vous ne pouvez pas le supprimer.",message);
         }else{
             myDataSource.getRepository(TypeOperation).softRemove(typeOperation)
             .then(_ => {
-                const message = `Le type de taxe avec l'identifiant n°${typeOperation.id} a bien été supprimée.`;
+                const message = `Le type d\'opération avec l'identifiant n°${typeOperation.id} a bien été supprimée.`;
                 return success(res,200, typeOperation,message);
             })
         }
     }).catch(error => {
-        const message = `Le type de taxe n'a pas pu être supprimée. Réessayez dans quelques instants.`
+        const message = `Le type d\'opération n'a pas pu être supprimée. Réessayez dans quelques instants.`
         return generateServerErrorCode(res,500,error,message)
     })
 }

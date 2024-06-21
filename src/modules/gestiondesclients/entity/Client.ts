@@ -5,6 +5,7 @@ import { AdresseLivraison } from "../../gestiondessorties/entity/AdresseLivraiso
 import { Compte } from "../../gestiondesportefeuille/entity/Compte";
 import { Transaction } from "../../gestiondesportefeuille/entity/Transaction";
 import { Sortie } from "../../gestiondessorties/entity/Sortie";
+import { Vente } from "../../gestiondespointventes/entity/Vente";
 
 @Entity()
 export class Client{
@@ -38,6 +39,10 @@ export class Client{
     @Column({nullable:false})
     @IsNotEmpty({message:"La raison sociale est obligatoire."})
     raisonSociale:string
+
+    @ManyToOne(()=>Vente, (vente)=>vente.clients)
+    @JoinColumn()
+    vente:Vente[]
 
     @OneToMany(() => AdresseLivraison, (adresselivrclient) => adresselivrclient.client)
     adresselivrclients: AdresseLivraison[]

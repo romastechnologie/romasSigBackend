@@ -43,6 +43,12 @@ import { sortiesRoutes } from "./modules/gestiondessorties/route/sortie.route";
 import { commandeClientsRoutes } from "./modules/gestiondesclients/route/commandeclient.route";
 import { commandeFournisseursRoutes } from "./modules/gestiondesapprovisionnements/route/commandefournisseur.route";
 import { depensesRoutes } from "./modules/gestiondesfactures/route/depense.route";
+import { typedepensesRoutes } from "./modules/gestionparametre/route/typedepense.route";
+import { typeoperationsRoutes } from "./modules/gestionparametre/route/typeoperation.route";
+import { ventesRoutes } from "./modules/gestiondespointventes/route/vente.route";
+import { elementsRoutes } from "./modules/gestiondespointventes/route/element.route";
+import { operationsRoutes } from "./modules/gestiondesportefeuille/route/operation.route";
+import { typecomptesRoutes } from "./modules/gestiondesportefeuille/route/typecompte.route";
 
 
 require("dotenv").config();
@@ -151,6 +157,18 @@ depensesRoutes(app)
 commandeClientsRoutes(app);
 
 commandeFournisseursRoutes(app);
+
+typeoperationsRoutes(app);
+
+typedepensesRoutes(app);
+
+ventesRoutes(app);
+
+elementsRoutes(app);
+
+operationsRoutes(app);
+
+typecomptesRoutes(app);
 
 //Autorisation des entêtes
 app.use((req, res, next) => {
