@@ -31,6 +31,18 @@ export class Compte{
     @Column({nullable:false})
     typeCompte:number
 
+    @Column()
+    statut:boolean
+   
+    @Column()
+    soldeActuel:number
+
+    @Column()
+    soldeInitial:number
+
+    @Column()
+    dateCreation:Date
+
     @OneToMany(() => Operation, (operation) => operation.compte)
     operations: Operation[]
 
