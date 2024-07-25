@@ -38,8 +38,7 @@ export class User {
     @IsEmail({},{ message: "L'adresse email est invalide." })
     email: string;
 
-    @Column()
-    numeroNational:string
+
 
     // @OneToOne(()=>Abonne, (abonne)=>abonne.user)
     // @JoinColumn()
