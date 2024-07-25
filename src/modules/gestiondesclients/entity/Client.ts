@@ -4,22 +4,26 @@ import { CommandeClient } from "./CommandeClient";
 import { AdresseLivraison } from "../../gestiondessorties/entity/AdresseLivraison";
 import { Compte } from "../../gestiondesportefeuille/entity/Compte";
 import { Transaction } from "../../gestiondesportefeuille/entity/Transaction";
+import { Sortie } from "../../gestiondessorties/entity/Sortie";
+import { Vente } from "../../gestiondespointventes/entity/Vente";
+import { Operation } from "../../gestiondesportefeuille/entity/Operation";
 
 @Entity()
 export class Client{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column({nullable:false})
-    @IsNotEmpty({message:"Le nom du client est obligatoire."})
+    @Column({nullable:true})
     nomClient:string
 
-    @Column({nullable:false})
-    @IsNotEmpty({message:"Le prénom est obligatoire."})
+    @Column({nullable:true})
     prenomClient:string
 
     @Column()
     adresseClient:string
+
+    @Column()
+    sexe:string
 
     @Column()
     emailClient:string
@@ -34,9 +38,12 @@ export class Client{
     @Column({nullable:true})
     dateNais:Date
 
-    @Column({nullable:false})
-    @IsNotEmpty({message:"La raison sociale est obligatoire."})
+    @Column({nullable:true})
     raisonSociale:string
+
+    @ManyToOne(()=>Vente, (vente)=>vente.clients)
+    @JoinColumn()
+    vente:Vente[]
 
     @OneToMany(() => AdresseLivraison, (adresselivrclient) => adresselivrclient.client)
     adresselivrclients: AdresseLivraison[]
@@ -50,20 +57,23 @@ export class Client{
     @OneToMany(() => Transaction, (clientransac) => clientransac.client)
     clientransacs: Transaction[]
 
+    @OneToMany(() => Sortie, (client) => client.sortie)
+    clients: Sortie[];
+
+    @OneToMany(() => Operation, (operation) => operation.client)
+    operations: Operation[]
+    
     @Column({nullable:false})
     @IsNotEmpty({message:"L'ifu est obligatoire."})
     ifu:number
     
-    @Column({nullable:false})
-    @IsNotEmpty({message:"Le RCCM est obligatoire."})
+    @Column({nullable:true})
     rccm:string
 
-    @Column({nullable:false})
-    @IsNotEmpty({message:"Le sigle est obligatoire."})
+    @Column({nullable:true})
     sigle:string
 
-    @Column({nullable:false})
-    @IsNotEmpty({message:"La dénomination est obligatoire."})
+    @Column({nullable:true})
     denomination:string
 
     @Column({nullable:true})

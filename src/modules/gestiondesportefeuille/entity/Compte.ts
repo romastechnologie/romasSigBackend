@@ -3,6 +3,7 @@ import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTab
 import { Fournisseur } from "../../gestiondesfournisseurs/entity/Fournisseur";
 import { Client } from "../../gestiondesclients/entity/Client";
 import { Transaction } from "./Transaction";
+import { Operation } from "./Operation";
 
 @Entity()
 export class Compte{
@@ -26,6 +27,24 @@ export class Compte{
 
     @OneToMany(() => Transaction, (comptetransac) => comptetransac.compte)
     comptetransacs: Transaction[]
+
+    @Column({nullable:false})
+    typeCompte:number
+
+    @Column()
+    statut:boolean
+   
+    @Column()
+    soldeActuel:number
+
+    @Column()
+    soldeInitial:number
+
+    @Column()
+    dateCreation:Date
+
+    @OneToMany(() => Operation, (operation) => operation.compte)
+    operations: Operation[]
 
     @CreateDateColumn()
     createdAt:Timestamp

@@ -11,7 +11,7 @@ export class Livraison{
     id:number
 
     @Column({nullable:false})
-    date:Date
+    dateLivr:Date
 
     @ManyToOne(()=>CommandeClient, (commandeclient)=>commandeclient.commandeclientlivrs)
     @JoinColumn()

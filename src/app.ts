@@ -42,6 +42,13 @@ import { fournisseursRoutes } from "./modules/gestiondesfournisseurs/route.ts/fo
 import { sortiesRoutes } from "./modules/gestiondessorties/route/sortie.route";
 import { commandeClientsRoutes } from "./modules/gestiondesclients/route/commandeclient.route";
 import { commandeFournisseursRoutes } from "./modules/gestiondesapprovisionnements/route/commandefournisseur.route";
+import { depensesRoutes } from "./modules/gestiondesfactures/route/depense.route";
+import { typedepensesRoutes } from "./modules/gestionparametre/route/typedepense.route";
+import { typeoperationsRoutes } from "./modules/gestionparametre/route/typeoperation.route";
+import { ventesRoutes } from "./modules/gestiondespointventes/route/vente.route";
+import { elementsRoutes } from "./modules/gestiondespointventes/route/element.route";
+import { operationsRoutes } from "./modules/gestiondesportefeuille/route/operation.route";
+import { typecomptesRoutes } from "./modules/gestiondesportefeuille/route/typecompte.route";
 
 
 require("dotenv").config();
@@ -75,7 +82,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 //Gestion des cors
 app.use(cors(
-    {origin:  ['http://localhost:3000','http://localhost:8080','http://localhost:8081','http://192.168.8.59:3003' ],
+    {origin:  ['http://localhost:3000','http://localhost:8082','http://localhost:8080','http://localhost:8081','http://192.168.8.59:3003' ],
     credentials: true
 }));
 
@@ -145,9 +152,23 @@ pointventesRoutes(app);
 
 sortiesRoutes(app);
 
+depensesRoutes(app)
+
 commandeClientsRoutes(app);
 
 commandeFournisseursRoutes(app);
+
+typeoperationsRoutes(app);
+
+typedepensesRoutes(app);
+
+ventesRoutes(app);
+
+elementsRoutes(app);
+
+operationsRoutes(app);
+
+typecomptesRoutes(app);
 
 //Autorisation des entêtes
 app.use((req, res, next) => {

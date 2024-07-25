@@ -11,11 +11,14 @@ export class Approvisionnement{
     id:number
 
     @Column({nullable:false})
-    montant:number
+    montantTotal:number
 
-    @Column({nullable:false})
-    @IsNotEmpty({message:"La date est obligatoire."})
-    date:Date
+    @Column({nullable:true})
+    refAppro:string
+
+    @Column({ nullable: true})
+    // @Column({ nullable: true, default: () => 'CURRENT_TIMESTAMP' })
+    dateAppro:Date
 
     @ManyToOne(()=>CommandeFournisseur, (commandefournisseur)=>commandefournisseur.aprovisioncommandefournis)
     @JoinColumn()
@@ -23,6 +26,10 @@ export class Approvisionnement{
 
     @OneToMany(() => AProCondi, (apropocondi) => apropocondi.approvision)
     apropocondis: AProCondi[]
+    
+    @ManyToOne(()=>Fournisseur, (fournisseur)=>fournisseur.approvisionnements)
+    @JoinColumn()
+    fournisseur:Fournisseur[]
 
     @CreateDateColumn()
     createdAt:Timestamp
