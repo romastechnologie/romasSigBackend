@@ -10,7 +10,7 @@ export class Societe{
     
     @Column({nullable:false})
     @IsNotEmpty({message:"Le nom est obligatoire."})
-    nom:string
+    denomination:string
 
     @Column({nullable:false})
     @IsNotEmpty({message:"Le sigle est obligatoire."})
