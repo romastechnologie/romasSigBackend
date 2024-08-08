@@ -5,7 +5,6 @@ import { ProduitConditionnement } from "../../gestiondesconditionnements/entity/
 import { Magasin } from "../../gestiondesmagasins/entity/Magasin";
 import { Vente } from "../../gestiondespointventes/entity/Vente";
 
-
 @Entity()
 export class Produit{
     @PrimaryGeneratedColumn()

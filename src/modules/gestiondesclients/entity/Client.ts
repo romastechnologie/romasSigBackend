@@ -7,6 +7,7 @@ import { Transaction } from "../../gestiondesportefeuille/entity/Transaction";
 import { Sortie } from "../../gestiondessorties/entity/Sortie";
 import { Vente } from "../../gestiondespointventes/entity/Vente";
 import { Operation } from "../../gestiondesportefeuille/entity/Operation";
+import { Depot } from "../../gestiondesfactures/entity/Depot";
 
 @Entity()
 export class Client{
@@ -59,6 +60,9 @@ export class Client{
 
     @OneToMany(() => Sortie, (client) => client.sortie)
     clients: Sortie[];
+
+    @OneToMany(() => Depot, (depot) => depot.client)
+    depot: Depot[];
 
     @OneToMany(() => Operation, (operation) => operation.client)
     operations: Operation[]

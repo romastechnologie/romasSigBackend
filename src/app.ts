@@ -49,6 +49,8 @@ import { ventesRoutes } from "./modules/gestiondespointventes/route/vente.route"
 import { elementsRoutes } from "./modules/gestiondespointventes/route/element.route";
 import { operationsRoutes } from "./modules/gestiondesportefeuille/route/operation.route";
 import { typecomptesRoutes } from "./modules/gestiondesportefeuille/route/typecompte.route";
+import { livraisonsRoutes } from "./modules/gestiondessorties/route/livraison.route";
+import { depotsRoutes } from "./modules/gestiondesfactures/route/depot.route";
 
 
 require("dotenv").config();
@@ -169,6 +171,12 @@ elementsRoutes(app);
 operationsRoutes(app);
 
 typecomptesRoutes(app);
+
+livraisonsRoutes(app);
+
+depotsRoutes(app);
+
+depensesRoutes(app);
 
 //Autorisation des entêtes
 app.use((req, res, next) => {
