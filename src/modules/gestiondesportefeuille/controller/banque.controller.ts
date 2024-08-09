@@ -18,7 +18,7 @@ export const createBanque = async (req: Request, res: Response) => {
     }
     await myDataSource.getRepository(Banque).save(banque)
     .then(banque => {
-        const message = `La banque ${req.body.id} a bien été créé.`
+        const message = `La banque a bien été créé.`
         return success(res,201, banque,message);
     })
     .catch(error => {

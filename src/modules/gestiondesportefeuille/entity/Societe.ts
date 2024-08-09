@@ -22,6 +22,21 @@ export class Societe{
     @Column({nullable:true})
     logo:string
 
+    @Column({nullable:true})
+    apNim:string
+
+    @Column({nullable:true})
+    lienApi:string
+
+    @Column({nullable:true})
+    lieuImpression:string
+
+    @Column({nullable:true})
+    apiToken:string
+    
+    @Column({nullable:true})
+    messageCommercial:string
+
     @Column({nullable:false})
     @IsNotEmpty({message:"La raison sociale est obligatoire."})
     raisonSocial:string

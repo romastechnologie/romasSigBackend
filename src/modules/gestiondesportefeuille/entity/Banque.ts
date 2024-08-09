@@ -10,14 +10,17 @@ export class Banque{
     @PrimaryGeneratedColumn()
     id:number
     
-    @Column({nullable:false})
-    @IsNotEmpty({message:"Le nom est obligatoire."})
-    nom:string
+    @Column({nullable:true})
+    sigle:string
+
+    @Column({unique:true, nullable:true})
+    @IsNotEmpty({message:"La dénomination est obligatoire."})
+    denomination:string
 
     @Column({nullable:true})
     adresse:string
 
-    @Column({nullable:false})
+    @Column({nullable:true})
     numCompte:number
 
     @ManyToOne(()=>Societe, (societe)=>societe.banquesocietes)

@@ -7,6 +7,9 @@ export class Fonction{
     @PrimaryGeneratedColumn()
     id:number
 
+    @Column({nullable:true})
+    code:string
+
     @Column({nullable:false})
     @IsNotEmpty({message:"La fonction est obligatoire."})
     libelle:string

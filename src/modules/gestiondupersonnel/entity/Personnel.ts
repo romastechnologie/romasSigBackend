@@ -17,7 +17,7 @@ export class Personnel{
     @IsNotEmpty({message:"Le prénom est obligatoire"})
     prenom:string
 
-    @Column({nullable:false})
+    @Column({nullable:true})
     sexe:string
 
     @Column({nullable:true})
@@ -35,14 +35,6 @@ export class Personnel{
 
     @Column({nullable:true})
     adresse:string
-
-    @Column({nullable:false})
-    @IsNotEmpty({message:"Le nom d'utilisateur est obligatoire"})
-    nomUtilisateur:string
-
-    @Column({nullable:false})
-    @IsNotEmpty({message:"Le mot de passe est obligatoire"})
-    motPasse:string
 
     @OneToMany(() => PersonnelFonction, (personnelfonction) => personnelfonction.personnel)
     personnelfonctions: PersonnelFonction[]
