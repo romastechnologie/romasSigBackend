@@ -2,6 +2,7 @@ import { IsAlpha, IsNotEmpty } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, OneToOne, PrimaryGeneratedColumn, Timestamp, UpdateDateColumn } from "typeorm";
 import { Paiement } from "./Paiement";
 import { Depot } from "./Depot";
+import { Transaction } from "../../gestiondesportefeuille/entity/Transaction";
 
 @Entity()
 export class ModePaiement{
@@ -17,6 +18,9 @@ export class ModePaiement{
 
     @OneToMany(() => Depot, (depot) => depot.modepaiement) 
     depot: Depot
+
+    @OneToMany(() => Transaction, (modepaiement) => modepaiement.modepaiement)
+    modepaiements: Transaction[]
 
     @CreateDateColumn()
     createdAt:Timestamp

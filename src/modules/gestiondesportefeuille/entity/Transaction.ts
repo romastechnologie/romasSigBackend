@@ -4,6 +4,7 @@ import { Client } from "../../gestiondesclients/entity/Client";
 import { Banque } from "./Banque";
 import { Compte } from "./Compte";
 import { TypeOperation } from "./TypeOperation";
+import { ModePaiement } from "../../gestiondesfactures/entity/ModePaiement";
 
 @Entity()
 export class Transaction{
@@ -14,23 +15,30 @@ export class Transaction{
     motifTrans:string
 
     @Column({nullable:true})
+    refTrans:string
+
+    @Column({nullable:true})
     montTrans:string
 
     @ManyToOne(()=>Client, (client)=>client.clientransacs)
     @JoinColumn()
     client:Client[]
 
-    @ManyToOne(()=>Banque, (banque)=>banque.banquetransacs)
+    @ManyToOne(()=>ModePaiement, (modepaiement)=>modepaiement.modepaiements)
     @JoinColumn()
-    banque:Banque[]
+    modepaiement:ModePaiement[]
+
+    // @ManyToOne(()=>Banque, (banque)=>banque.banquetransacs)
+    // @JoinColumn()
+    // banque:Banque[]
 
     @ManyToOne(()=>TypeOperation, (typeoperation)=>typeoperation.typeopertransacs)
     @JoinColumn()
     typeoperation:TypeOperation[]
 
-    @ManyToOne(()=>Compte, (compte)=>compte.comptetransacs)
-    @JoinColumn()
-    compte:Compte[]
+    // @ManyToOne(()=>Compte, (compte)=>compte.comptetransacs)
+    // @JoinColumn()
+    // compte:Compte[]
 
     @CreateDateColumn()
     createdAt:Timestamp
