@@ -25,8 +25,8 @@ export class Compte{
     @JoinColumn()
     fournisseur:Fournisseur[]
 
-    @OneToMany(() => Transaction, (comptetransac) => comptetransac.compte)
-    comptetransacs: Transaction[]
+    // @OneToMany(() => Transaction, (comptetransac) => comptetransac.compte)
+    // comptetransacs: Transaction[]
 
     @Column({nullable:false})
     typeCompte:number

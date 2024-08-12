@@ -37,7 +37,7 @@ export const getAllCompte = async (req: Request, res: Response) => {
         relations:{
             client:true,
             fournisseur:true,
-            comptetransacs:true
+            // comptetransacs:true
         }
     })
     .then((retour) => {
@@ -58,7 +58,7 @@ export const getCompte = async (req: Request, res: Response) => {
         relations: {
             client:true,
             fournisseur:true,
-            comptetransacs:true 
+            // comptetransacs:true 
         },
     })
     .then(compte => {
@@ -85,7 +85,7 @@ export const updateCompte = async (req: Request, res: Response) => {
         relations: {
             client:true,
             fournisseur:true,
-            comptetransacs:true 
+            // comptetransacs:true 
         },
     }
     )
@@ -124,7 +124,7 @@ export const deleteCompte = async (req: Request, res: Response) => {
         relations:{
             client:true,
             fournisseur:true,
-            comptetransacs:true
+            // comptetransacs:true
         }
         })
     .then(compte => {        

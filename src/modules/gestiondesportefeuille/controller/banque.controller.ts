@@ -37,7 +37,7 @@ export const getAllBanque = async (req: Request, res: Response) => {
     await myDataSource.getRepository(Banque).find({
         relations:{
             societe:true,
-            banquetransacs:true
+            // banquetransacs:true
         }
     })
     .then((retour) => {
@@ -57,7 +57,7 @@ export const getBanque = async (req: Request, res: Response) => {
         },
         relations: {
             societe:true,
-            banquetransacs:true
+            // banquetransacs:true
     },
     })
     .then(banque => {
@@ -83,7 +83,7 @@ export const updateBanque = async (req: Request, res: Response) => {
         },
         relations: {
             societe:true,
-            banquetransacs:true
+            // banquetransacs:true
         },
     }
     )
@@ -121,7 +121,7 @@ export const deleteBanque = async (req: Request, res: Response) => {
         },
         relations:{
             societe:true,
-            banquetransacs:true
+            // banquetransacs:true
         }
         })
     .then(banque => {        

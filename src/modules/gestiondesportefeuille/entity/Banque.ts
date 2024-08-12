@@ -27,8 +27,8 @@ export class Banque{
     @JoinColumn()
     societe:Societe[]
 
-    @OneToMany(() => Transaction, (banquetransac) => banquetransac.banque)
-    banquetransacs: Transaction[]
+    // @OneToMany(() => Transaction, (banquetransac) => banquetransac.banque)
+    // banquetransacs: Transaction[]
 
     @CreateDateColumn()
     createdAt:Timestamp
