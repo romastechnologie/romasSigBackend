@@ -24,7 +24,7 @@ export class Transaction{
     @JoinColumn()
     client:Client[]
 
-    @ManyToOne(()=>ModePaiement, (modepaiement)=>modepaiement.modepaiements)
+    @ManyToOne(()=>ModePaiement, (modepaiement)=>modepaiement.modepaiementts)
     @JoinColumn()
     modepaiement:ModePaiement[]
 

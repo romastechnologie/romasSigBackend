@@ -20,7 +20,7 @@ export class ModePaiement{
     depot: Depot
 
     @OneToMany(() => Transaction, (modepaiement) => modepaiement.modepaiement)
-    modepaiements: Transaction[]
+    modepaiementts: Transaction[]
 
     @CreateDateColumn()
     createdAt:Timestamp

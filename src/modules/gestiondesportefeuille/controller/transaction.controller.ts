@@ -38,9 +38,6 @@ export const getAllTransaction = async (req: Request, res: Response) => {
         relations:{
             client:true,
             typeoperation:true,
-            banque:true,
-            compte:true
-
         }
     })
     .then((retour) => {
@@ -61,8 +58,6 @@ export const getTransaction = async (req: Request, res: Response) => {
         relations: {
             client:true,
             typeoperation:true,
-            banque:true,
-            compte:true
   },
     })
     .then(transaction => {
@@ -89,8 +84,6 @@ export const updateTransaction = async (req: Request, res: Response) => {
         relations: {
             client:true,
             typeoperation:true,
-            banque:true,
-            compte:true
  
         },
     }
@@ -130,8 +123,6 @@ export const deleteTransaction = async (req: Request, res: Response) => {
         relations:{
             client:true,
             typeoperation:true,
-            banque:true,
-            compte:true
  
         }
         })
