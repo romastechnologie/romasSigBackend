@@ -11,6 +11,12 @@ export class Taxe{
     @IsNotEmpty({message:"La valeur de la taxe est obligatoire."})
     valeurTaxe:number
 
+    @Column({nullable:true})
+    codeTaxe:string
+
+    @Column({nullable:true})
+    valeur:string
+
     @Column({nullable:false})
     @IsNotEmpty({message:"Le libellé de la taxe est obligatoire."})
     libelleTaxe:string
